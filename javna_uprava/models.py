@@ -3,7 +3,8 @@ from django.db import models
 
 class Question(models.Model):
     question_text = models.TextField()
-    correct_choice = models.IntegerField()
+    correct_choice = models.IntegerField(default=0)
+    question_num = models.IntegerField(default=0)
 
     def __str__(self):
         return self.question_text

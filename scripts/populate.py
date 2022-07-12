@@ -10,12 +10,12 @@ def run():
     with open('javna_uprava/questions.csv', encoding='utf-8') as csvfile:
         rows = csv.reader(csvfile, delimiter=';')
         next(rows)
-        for row in rows:
+        for i, row in enumerate(rows, start=1):
             question = row[1]
             correct = row[8]
 
             question_item = Question.objects.create(
-                question_text=question, correct_choice=correct)
+                question_text=question, correct_choice=correct, question_num=i)
 
             question_item.save()
 
