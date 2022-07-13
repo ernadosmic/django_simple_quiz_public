@@ -1,5 +1,21 @@
 {% extends 'javna_uprava/base.html' %}
 {% block content %}
-<p>Ovo je kviz za javnu uprava od <s>{{ total_questions }}</s></p>
+
+{% for x in question_list %}
+    <div name="question_text">
+        {{x.question_num}}. {{x.question_text}}
+    </div><br>
+
+    <div>
+        {% for y in x.choice_set.all %}
+        {% if y.correct_choice %}
+        <button style="color:green">{{y}}</button><br>
+        {% else %}
+        <button>{{y}}</button><br>
+        {% endif %}
+        {% endfor %}
+    </div><br><br>
+{% endfor %}
+
 {% endblock content %}
 

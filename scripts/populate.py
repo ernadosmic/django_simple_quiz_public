@@ -19,29 +19,33 @@ def run():
 
             question_item.save()
 
-            choice_1 = Choice.objects.create(
-                choice_text=row[2], question_id=question_item,
-                correct_choice=True if int(correct) == 1 else False)
-            choice_2 = Choice.objects.create(
-                choice_text=row[3], question_id=question_item,
-                correct_choice=True if int(correct) == 2 else False)
-            choice_3 = Choice.objects.create(
-                choice_text=row[4], question_id=question_item,
-                correct_choice=True if int(correct) == 3 else False)
-            choice_4 = Choice.objects.create(
-                choice_text=row[5], question_id=question_item,
-                correct_choice=True if int(correct) == 4 else False)
-            choice_5 = Choice.objects.create(
-                choice_text=row[6], question_id=question_item,
-                correct_choice=True if int(correct) == 5 else False)
-            choice_6 = Choice.objects.create(
-                choice_text=row[7], question_id=question_item,
-                correct_choice=True if int(correct) == 6 else False)
-
-            question_item.save()
-            choice_1.save()
-            choice_2.save()
-            choice_3.save()
-            choice_4.save()
-            choice_5.save()
-            choice_6.save()
+            if row[2]:
+                choice_1 = Choice.objects.create(
+                    choice_text=row[2], question_id=question_item,
+                    correct_choice=True if int(correct) == 1 else False)
+                choice_1.save()
+            if row[3]:
+                choice_2 = Choice.objects.create(
+                    choice_text=row[3], question_id=question_item,
+                    correct_choice=True if int(correct) == 2 else False)
+                choice_2.save()
+            if row[4]:
+                choice_3 = Choice.objects.create(
+                    choice_text=row[4], question_id=question_item,
+                    correct_choice=True if int(correct) == 3 else False)
+                choice_3.save()
+            if row[5]:
+                choice_4 = Choice.objects.create(
+                    choice_text=row[5], question_id=question_item,
+                    correct_choice=True if int(correct) == 4 else False)
+                choice_4.save()
+            if row[6]:
+                choice_5 = Choice.objects.create(
+                    choice_text=row[6], question_id=question_item,
+                    correct_choice=True if int(correct) == 5 else False)
+                choice_5.save()
+            if row[7]:
+                choice_6 = Choice.objects.create(
+                    choice_text=row[7], question_id=question_item,
+                    correct_choice=True if int(correct) == 6 else False)
+                choice_6.save()

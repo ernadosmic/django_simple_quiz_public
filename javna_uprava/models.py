@@ -6,8 +6,8 @@ class Question(models.Model):
     correct_choice = models.IntegerField(default=0)
     question_num = models.IntegerField(default=0)
 
-    def __str__(self):
-        return self.question_text
+    # def __str__(self):
+    #     return self.question_text
 
 
 class Choice(models.Model):
