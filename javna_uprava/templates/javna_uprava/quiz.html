@@ -25,20 +25,10 @@
             {% endif %}
         {% endfor %}
     {% endfor %}
-    console.log(jsQuestionList)
-    for (i in jsQuestionList) {
-
-        for (y in jsQuestionList[i].choices){
-            for (h in jsQuestionList[i].choices[y]) {
-                if (jsQuestionList[i].choices[y][h]) {
-                    console.log(jsQuestionList[i].choices[y])
-                }
-            }
-        }
-    
-    }
-    
-    {% comment %} console.log(jsQuestionList); {% endcomment %}
 </script>
+
+
+{% load static %}
+<script type="text/javascript" src="{% static "javna_uprava/quiz.js" %}"></script>
 
 {% endblock content %}
