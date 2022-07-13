@@ -1,21 +1,44 @@
 {% extends 'javna_uprava/base.html' %}
 {% block content %}
+<div id="question_box">
+    <div id="question_text_box">1. Question</div>
+    <div id="question_choices_box"></div>
+    <button type="button" onclick="nextQuestion()" id="choice_1" value="" on>1) Choice</button><br>
+    <button type="button" onclick="nextQuestion()" id="choice_2" value="" on>2) Choice</button><br>
+    <button type="button" onclick="nextQuestion()" id="choice_3" value="" on>3) Choice</button><br>
+    <button type="button" onclick="nextQuestion()" id="choice_4" value="" on>4) Choice</button><br>
+    <button type="button" onclick="nextQuestion()" id="choice_5" value="" on>5) Choice</button><br>
+    <button type="button" onclick="nextQuestion()" id="choice_6" value="" on>6) Choice</button><br>
+</div>
 
-{% for x in question_list %}
-    <div name="question_text">
-        {{x.question_num}}. {{x.question_text}}
-    </div><br>
 
-    <div>
+<script type="text/javascript">
+    let jsQuestionList = {};
+
+    {% for x in question_list %}
+        jsQuestionList["{{x.question_num}}"] = {"question": "{{ x.question_text }}", "choices": {}}
         {% for y in x.choice_set.all %}
-        {% if y.correct_choice %}
-        <button style="color:green">{{y}}</button><br>
-        {% else %}
-        <button>{{y}}</button><br>
-        {% endif %}
+            {% if y.correct_choice %}
+                jsQuestionList["{{x.question_num}}"].choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": true}
+            {% else %}
+                jsQuestionList["{{x.question_num}}"].choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": false}
+            {% endif %}
         {% endfor %}
-    </div><br><br>
-{% endfor %}
+    {% endfor %}
+    console.log(jsQuestionList)
+    for (i in jsQuestionList) {
+
+        for (y in jsQuestionList[i].choices){
+            for (h in jsQuestionList[i].choices[y]) {
+                if (jsQuestionList[i].choices[y][h]) {
+                    console.log(jsQuestionList[i].choices[y])
+                }
+            }
+        }
+    
+    }
+    
+    {% comment %} console.log(jsQuestionList); {% endcomment %}
+</script>
 
 {% endblock content %}
-
