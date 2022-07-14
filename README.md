@@ -1,12 +1,12 @@
 # A SIMPLE DJANGO QUIZ
 
-## My first Django project
+## - my first Django project -
 
 So, this is my first web app. My first Django project I intend to do to completion.
 
 ## Steps
 
-Here I will journal my journey through `Django`, `HTML`, `CSS`, `javascript` and `sqlite3`.
+Here I will journal my journey through `Django`, `HTML`, `CSS`, `JavaScript` and `sqlite3`.
 
 ### 1. Creation of project
 
