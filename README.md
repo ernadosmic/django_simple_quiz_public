@@ -4,6 +4,12 @@
 
 So, this is my first web app. My first Django project I intend to do to completion.
 
+## Start
+
+> python -m venv venv
+> ./venv/Scripts/Activate.ps1
+> pip install -r requirements.txt
+
 ## Steps
 
 Here I will journal my journey through `Django`, `HTML`, `CSS`, `JavaScript` and `sqlite3`.
