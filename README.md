@@ -1,7 +1,5 @@
 # A SIMPLE DJANGO QUIZ
 
----
-
 ## My first Django project
 
 So, this is my first web app. My first Django project I intend to do to completion.
