@@ -7,7 +7,9 @@ So, this is my first web app. My first Django project I intend to do to completi
 ## Start
 
 > python -m venv venv
+>
 > ./venv/Scripts/Activate.ps1
+>
 > pip install -r requirements.txt
 
 ## Steps
