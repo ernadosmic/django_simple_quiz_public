@@ -42,7 +42,7 @@ button {
     font-size: x-large;
     width: 100%;
     height: 20%;
-    border-radius: 5px;
+    border-radius: 25px;
     margin-block: 15px;
     background: #f1f1f1;
     /* Green border */
@@ -73,12 +73,12 @@ button:hover {
     font-size: xx-large;
     color: green;
     font-weight: 700;
-    display: inline;
+    display: block;
 }
 
 #incorrect_answers_result {
     font-size: xx-large;
     color: red;
     font-weight: 700;
-    display: inline;
+    display: block;
 }

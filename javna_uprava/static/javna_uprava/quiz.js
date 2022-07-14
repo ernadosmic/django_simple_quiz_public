@@ -111,12 +111,12 @@ function viewResults() {
     const correct_answers_result = document.createElement("div")
     correct_answers_result.setAttribute("id", "correct_answers_result");
     question_box.appendChild(correct_answers_result);
-    correct_answers_result.textContent = correct_answers_counter;
+    correct_answers_result.textContent = `Tačnih: ${correct_answers_counter}`;
 
     const incorrect_answers_result = document.createElement("div")
     incorrect_answers_result.setAttribute("id", "incorrect_answers_result");
     question_box.appendChild(incorrect_answers_result);
-    incorrect_answers_result.textContent = incorrect_answers_counter;
+    incorrect_answers_result.textContent = `Netačnih: ${incorrect_answers_counter}`;
 
 }
 
