@@ -11,16 +11,42 @@ body {
     margin-bottom: 20px;
 }
 
+.correct-answer {
+    background: green;
+    color: #f1f1f1;
+    transition: 0.2s background ease-out;
+}
+
+
+
+.correct-answer:hover {
+    background: green;
+    color: #f1f1f1;
+    transition: 0.2s background ease-out;
+}
+
+.incorrect-answer {
+    background: red;
+    color: #f1f1f1;
+    transition: 0.2s background ease-out;
+}
+
+.incorrect-answer:hover {
+    background: red;
+    color: #f1f1f1;
+    transition: 0.2s background ease-out;
+}
+
 button {
-    margin-top: 10px;
+    border: 0px solid black;
     font-size: x-large;
     width: 100%;
     height: 20%;
-    background-color: #04AA6D;
-    /* Green background */
-    border: 1px solid green;
+    border-radius: 5px;
+    margin-block: 15px;
+    background: #f1f1f1;
     /* Green border */
-    color: white;
+    color: #000000;
     /* White text */
     padding: 10px 10px;
     /* Some padding */
@@ -38,9 +64,21 @@ button:not(:last-child) {
 }
 
 button:hover {
-    background-color: #3e8e41;
+    background: rgb(173, 173, 175);
+    color: #f1f1f1;
+    transition: 0.2s background ease-out;
 }
 
-/* button[value="true"] {
-    background-color: greenyellow;
-} */
+#correct_answers_result {
+    font-size: xx-large;
+    color: green;
+    font-weight: 700;
+    display: inline;
+}
+
+#incorrect_answers_result {
+    font-size: xx-large;
+    color: red;
+    font-weight: 700;
+    display: inline;
+}
