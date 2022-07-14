@@ -122,7 +122,7 @@ function viewResults() {
 
 
 // Warning message if the user wants to leave the quiz
-// window.onbeforeunload = function () {
-//     return "Data will be lost if you leave the page, are you sure?";
-// };
+window.onbeforeunload = function () {
+    return "Data will be lost if you leave the page, are you sure?";
+};
 
