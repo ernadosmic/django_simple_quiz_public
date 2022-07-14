@@ -1,19 +1,9 @@
 {% extends 'javna_uprava/base.html' %}
+{% load static %}
 {% block content %}
 <br>
-<button onclick="nextQ.next()"n>NEXT QUESTION</button>
 <br>
-<div id="question_box">
-    <div id="question_text_box">1. Question</div>
-    <div id="question_choices_box"></div>
-    <button type="button" onclick="nextQuestion()" id="choice_1" value="" on>1) Choice</button><br>
-    <button type="button" onclick="nextQuestion()" id="choice_2" value="" on>2) Choice</button><br>
-    <button type="button" onclick="nextQuestion()" id="choice_3" value="" on>3) Choice</button><br>
-    <button type="button" onclick="nextQuestion()" id="choice_4" value="" on>4) Choice</button><br>
-    <button type="button" onclick="nextQuestion()" id="choice_5" value="" on>5) Choice</button><br>
-    <button type="button" onclick="nextQuestion()" id="choice_6" value="" on>6) Choice</button><br>
-</div>
-
+<div id="question_box"></div>
 
 <script type="text/javascript">
     let jsQuestionList = {};
@@ -31,7 +21,7 @@
 </script>
 
 
-{% load static %}
+
 <script type="text/javascript" src="{% static "javna_uprava/quiz.js" %}"></script>
 
 {% endblock content %}
