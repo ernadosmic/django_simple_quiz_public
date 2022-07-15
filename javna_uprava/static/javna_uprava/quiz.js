@@ -1,34 +1,44 @@
 console.log(jsQuestionList);
-console.log(Object.keys(jsQuestionList).length);
+// console.log(Object.keys(jsQuestionList).length);
 let correct_answers_counter = 0;
 let incorrect_answers_counter = 0;
 let counter = 0;
+let script_question_number = 0;
+
+let wrong_answers_list = new Map();
 
 function* nextQuestion() {
-
-
-    console.log(counter);
+    // console.log(counter);
     for (i in jsQuestionList) {
         counter++;
-        console.log(counter);
-        console.log(jsQuestionList[i].question);
+        script_question_number = i;
 
         // Try to remove current question box if it exists
         try {
             const elem = document.getElementById("current_question_box");
             elem.parentNode.removeChild(elem);
-        } catch (error) { }
+        } catch (error) { };
 
         // For every question create a div
         const current_question_box = document.createElement("div");
         current_question_box.setAttribute("id", "current_question_box");
         document.getElementById("question_box").appendChild(current_question_box);
 
+        // Create question number div
+        const current_question_number = document.createElement("div");
+        current_question_number.setAttribute("id", "current_question_number");
+        current_question_number.setAttribute("style", "display: inline");
+        current_question_number.textContent = `${counter}. `;
+        document.getElementById("current_question_box")
+            .appendChild(current_question_number);
+
+
         // Create question text inside a created div
         const current_question_text = document.createElement("div");
         current_question_text.setAttribute("id", "current_question_text");
+        current_question_text.setAttribute("style", "display: inline");
         current_question_text.textContent =
-            `${counter}. ${jsQuestionList[i].question}`;
+            `${jsQuestionList[i].question}`;
         document
             .getElementById("current_question_box")
             .appendChild(current_question_text);
@@ -84,20 +94,25 @@ function nextQuestionClick(value, id) {
         // If the answer is not correct, do this
     } else {
         el.setAttribute('class', 'incorrect-answer');
-        incorrect_answers_counter++
+        incorrect_answers_counter++;
+
+        // Grab the question text
+        wrong_answer_text = current_question_text.textContent
+
+        wrong_answers_list.set(`${i}`, `${wrong_answer_text}`)
     }
 
     // wait a second
     setTimeout(() => {
         if (counter === Object.keys(jsQuestionList).length) {
-            console.log("IDEMO DALJE");
+            // console.log("IDEMO DALJE");
             viewResults();
         } else {
             nextQ.next();
         }
 
-    }, "2000");
-    console.log("Odmah");
+    }, "0");
+    // console.log("Odmah");
 }
 
 function viewResults() {
@@ -117,6 +132,8 @@ function viewResults() {
     incorrect_answers_result.setAttribute("id", "incorrect_answers_result");
     question_box.appendChild(incorrect_answers_result);
     incorrect_answers_result.textContent = `Netačnih: ${incorrect_answers_counter}`;
+
+    console.log(wrong_answers_list)
 
 }
 
