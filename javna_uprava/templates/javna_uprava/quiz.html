@@ -8,22 +8,32 @@
 
 <script type="text/javascript">
     const jsQuestionList = new Map();
-
-    {% for x in question_list %}
-        jsQuestionList.set({{ x.question_num }}, {question: "{{ x.question_text }}", choices: {}});
-        {/* jsQuestionList["{{x.question_num}}"] = {"question": "{{ x.question_text }}", "choices": {}} */}
-        {% for y in x.choice_set.all%}
-            {% if y.correct_choice %}
-                jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": true}
-            {% else %}
-                jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": false}
-            {% endif %}
+    function createQuestionMap() {
+        
+        {% for x in question_list %}
+            jsQuestionList.set({{ x.question_num }}, {question: "{{ x.question_text }}", choices: {}});
+            {/* jsQuestionList["{{x.question_num}}"] = {"question": "{{ x.question_text }}", "choices": {}} */}
+            {% for y in x.choice_set.all%}
+                {% if y.correct_choice %}
+                    jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": true}
+                {% else %}
+                    jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": false}
+                {% endif %}
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        createQuestionMap()
+     }, false);
 </script>
 
-
-
 <script type="text/javascript" src="{% static "javna_uprava/quiz.js" %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        nextQ.next();
+     }, false);
+</script>
+
 
 {% endblock content %}

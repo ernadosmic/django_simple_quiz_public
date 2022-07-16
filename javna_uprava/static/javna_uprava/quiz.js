@@ -1,6 +1,9 @@
 console.log(jsQuestionList.size);
 
 // Global vars
+const nextQ = nextQuestion();
+
+
 let correct_answers_counter = 0;
 let incorrect_answers_counter = 0;
 let counter = 0;
@@ -92,8 +95,7 @@ function* nextQuestion() {
     }
 }
 
-const nextQ = nextQuestion();
-nextQ.next();
+
 
 function nextQuestionClick(value, id) {
     // Grab the pressed button as "el"
