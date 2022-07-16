@@ -1,17 +1,43 @@
-console.log(jsQuestionList);
-// console.log(Object.keys(jsQuestionList).length);
+console.log(jsQuestionList.size);
+
+// Global vars
 let correct_answers_counter = 0;
 let incorrect_answers_counter = 0;
 let counter = 0;
-let script_question_number = 0;
+let currentQuestionNumber = 0;
+let currentQuestionText = 0;
+let currentQuestionChoices = null;
 
 let wrong_answers_list = new Map();
 
 function* nextQuestion() {
     // console.log(counter);
-    for (i in jsQuestionList) {
+    for (const i of jsQuestionList.keys()) {
+        // console.log(i);
+        // console.log(jsQuestionList.get(i).question);
+        // console.log(jsQuestionList.get(i).choices);
+
+        // for (const j in jsQuestionList.get(i).choices) {
+        //     console.log(jsQuestionList.get(i).choices[j])
+        // }
+
+        // Golabl vars assignments
+        currentQuestionNumber = i;
+        currentQuestionText = jsQuestionList.get(i).question
+        currentQuestionChoices = jsQuestionList.get(i).choices
+
         counter++;
-        script_question_number = i;
+
+        // Debugging
+        console.log("currentQuestionNumber: " + currentQuestionNumber);
+        console.log("currentQuestionText: " + currentQuestionText);
+        console.log("currentQuestionChoices: " + currentQuestionChoices);
+
+        for (const x in currentQuestionChoices) {
+            console.log(Object.keys(currentQuestionChoices[x])[0]);
+        }
+
+
 
         // Try to remove current question box if it exists
         try {
@@ -37,8 +63,7 @@ function* nextQuestion() {
         const current_question_text = document.createElement("div");
         current_question_text.setAttribute("id", "current_question_text");
         current_question_text.setAttribute("style", "display: inline");
-        current_question_text.textContent =
-            `${jsQuestionList[i].question}`;
+        current_question_text.textContent = currentQuestionText;
         document
             .getElementById("current_question_box")
             .appendChild(current_question_text);
@@ -51,13 +76,14 @@ function* nextQuestion() {
             .appendChild(current_choices_box);
 
         // Create choices buttons
-        for (x in jsQuestionList[i].choices) {
+        for (const x in currentQuestionChoices) {
+            console.log(Object.values(currentQuestionChoices[x])[0])
             try {
                 const btn = document.createElement("button");
                 btn.setAttribute("id", `${i}${x}`);
-                btn.setAttribute("onclick", `nextQuestionClick(${Object.values(jsQuestionList[i].choices[x])}, ${i}${x})`);
-                btn.setAttribute("value", Object.values(jsQuestionList[i].choices[x]));
-                btn.textContent = Object.keys(jsQuestionList[i].choices[x]);
+                btn.setAttribute("onclick", `nextQuestionClick(${Object.values(currentQuestionChoices[x])[0]}, ${i}${x})`);
+                btn.setAttribute("value", Object.values(currentQuestionChoices[x])[0]);
+                btn.textContent = `${x}) ${Object.keys(currentQuestionChoices[x])[0]}`;
                 document.getElementById("current_choices_box").appendChild(btn);
             } catch (error) { }
         }
@@ -99,19 +125,19 @@ function nextQuestionClick(value, id) {
         // Grab the question text
         wrong_answer_text = current_question_text.textContent
 
-        wrong_answers_list.set(`${i}`, `${wrong_answer_text}`)
+        wrong_answers_list.set(`${currentQuestionNumber}. ${wrong_answer_text}`)
     }
 
     // wait a second
     setTimeout(() => {
-        if (counter === Object.keys(jsQuestionList).length) {
+        if (counter === jsQuestionList.size) {
             // console.log("IDEMO DALJE");
             viewResults();
         } else {
             nextQ.next();
         }
 
-    }, "0");
+    }, "1000");
     // console.log("Odmah");
 }
 
