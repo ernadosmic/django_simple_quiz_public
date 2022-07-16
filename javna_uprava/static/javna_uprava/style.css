@@ -35,6 +35,9 @@ body {
 }
 
 button {
+    text-indent: -22px;
+    padding-left: 22px;
+
     border: 0px solid black;
     font-size: x-large;
     width: 100%;

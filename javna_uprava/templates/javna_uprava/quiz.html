@@ -1,20 +1,22 @@
 {% extends 'javna_uprava/base.html' %}
 {% load static %}
 {% block content %}
+
 <br>
 <br>
 <div id="question_box"></div>
 
 <script type="text/javascript">
-    let jsQuestionList = {};
+    const jsQuestionList = new Map();
 
     {% for x in question_list %}
-        jsQuestionList["{{x.question_num}}"] = {"question": "{{ x.question_text }}", "choices": {}}
-        {% for y in x.choice_set.all %}
+        jsQuestionList.set({{ x.question_num }}, {question: "{{ x.question_text }}", choices: {}});
+        {/* jsQuestionList["{{x.question_num}}"] = {"question": "{{ x.question_text }}", "choices": {}} */}
+        {% for y in x.choice_set.all%}
             {% if y.correct_choice %}
-                jsQuestionList["{{x.question_num}}"].choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": true}
+                jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": true}
             {% else %}
-                jsQuestionList["{{x.question_num}}"].choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": false}
+                jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": false}
             {% endif %}
         {% endfor %}
     {% endfor %}
