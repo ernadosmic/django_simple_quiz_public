@@ -9,15 +9,14 @@
 <script type="text/javascript">
     const jsQuestionList = new Map();
     function createQuestionMap() {
-        
         {% for x in question_list %}
-            jsQuestionList.set({{ x.question_num }}, {question: "{{ x.question_text }}", choices: {}});
+            jsQuestionList.set({{ x.question_num|escapejs }}, {question: "{{ x.question_text|escapejs }}", choices: {}});
             {/* jsQuestionList["{{x.question_num}}"] = {"question": "{{ x.question_text }}", "choices": {}} */}
             {% for y in x.choice_set.all%}
                 {% if y.correct_choice %}
-                    jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": true}
+                    jsQuestionList.get({{ x.question_num|escapejs }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text|escapejs }}": true}
                 {% else %}
-                    jsQuestionList.get({{ x.question_num }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text }}": false}
+                    jsQuestionList.get({{ x.question_num|escapejs }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text|escapejs }}": false}
                 {% endif %}
             {% endfor %}
         {% endfor %}
