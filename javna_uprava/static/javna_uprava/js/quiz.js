@@ -11,18 +11,11 @@ let currentQuestionNumber = 0;
 let currentQuestionText = 0;
 let currentQuestionChoices = null;
 
-let wrong_answers_list = new Map();
+let wrongAnswersMap = new Map();
 
 function* nextQuestion() {
     // console.log(counter);
     for (const i of jsQuestionList.keys()) {
-        // console.log(i);
-        // console.log(jsQuestionList.get(i).question);
-        // console.log(jsQuestionList.get(i).choices);
-
-        // for (const j in jsQuestionList.get(i).choices) {
-        //     console.log(jsQuestionList.get(i).choices[j])
-        // }
 
         // Golabl vars assignments
         currentQuestionNumber = i;
@@ -32,13 +25,13 @@ function* nextQuestion() {
         counter++;
 
         // Debugging
-        console.log("currentQuestionNumber: " + currentQuestionNumber);
-        console.log("currentQuestionText: " + currentQuestionText);
-        console.log("currentQuestionChoices: " + currentQuestionChoices);
+        // console.log("currentQuestionNumber: " + currentQuestionNumber);
+        // console.log("currentQuestionText: " + currentQuestionText);
+        // console.log("currentQuestionChoices: " + currentQuestionChoices);
 
-        for (const x in currentQuestionChoices) {
-            console.log(Object.keys(currentQuestionChoices[x])[0]);
-        }
+        // for (const x in currentQuestionChoices) {
+        //     console.log(Object.keys(currentQuestionChoices[x])[0]);
+        // }
 
 
 
@@ -53,20 +46,12 @@ function* nextQuestion() {
         current_question_box.setAttribute("id", "current_question_box");
         document.getElementById("question_box").appendChild(current_question_box);
 
-        // Create question number div
-        const current_question_number = document.createElement("div");
-        current_question_number.setAttribute("id", "current_question_number");
-        current_question_number.setAttribute("style", "display: inline");
-        current_question_number.textContent = `${counter}. `;
-        document.getElementById("current_question_box")
-            .appendChild(current_question_number);
-
 
         // Create question text inside a created div
         const current_question_text = document.createElement("div");
         current_question_text.setAttribute("id", "current_question_text");
         current_question_text.setAttribute("style", "display: inline");
-        current_question_text.textContent = currentQuestionText;
+        current_question_text.textContent = `${counter}. ${currentQuestionText}`;
         document
             .getElementById("current_question_box")
             .appendChild(current_question_text);
@@ -80,7 +65,7 @@ function* nextQuestion() {
 
         // Create choices buttons
         for (const x in currentQuestionChoices) {
-            console.log(Object.values(currentQuestionChoices[x])[0])
+            // console.log(Object.values(currentQuestionChoices[x])[0])
             try {
                 const btn = document.createElement("button");
                 btn.setAttribute("id", `${i}${x}`);
@@ -110,7 +95,7 @@ function nextQuestionClick(value, id) {
         // and setAttribute to disable
         // so they cannot be clicked
         button.setAttribute("disabled", "true");
-        // grab the child with value = true and color it green
+        // grab the child with value = true and color it green with css
         if (button.getAttribute("value") === "true") {
             button.setAttribute("class", "correct-answer");
         }
@@ -125,9 +110,58 @@ function nextQuestionClick(value, id) {
         incorrect_answers_counter++;
 
         // Grab the question text
-        wrong_answer_text = current_question_text.textContent
+        console.log(currentQuestionNumber)
+        console.log(currentQuestionText)
+        console.log(currentQuestionChoices)
+        console.log(el.innerHTML)
 
-        wrong_answers_list.set(`${currentQuestionNumber}. ${wrong_answer_text}`)
+        wrongAnswersMap.set(currentQuestionNumber, currentQuestionText)
+
+        console.log(currentQuestionChoices)
+
+        const wrong_answer_container = document.createElement("div");
+        wrong_answer_container.setAttribute("id", `wrong_${currentQuestionNumber}`);
+        wrong_answer_container.setAttribute("class", `wrong_answer_container`);
+        document.getElementById("results_box_content").insertBefore(wrong_answer_container, document.getElementById("results_box_content").firstChild);
+
+        const wrong_answer = document.createElement("p");
+        wrong_answer.textContent = `${currentQuestionNumber}. ${currentQuestionText}`;
+        wrong_answer.setAttribute("style", "font-weight: bold");
+        wrong_answer_container.appendChild(wrong_answer);
+
+        const wrong_answer_choices_list = document.createElement("ol");
+        wrong_answer_choices_list.setAttribute("id", `wrong_list_${currentQuestionNumber}`);
+        wrong_answer_choices_list.setAttribute("class", `wrong_list`);
+        wrong_answer_container.appendChild(wrong_answer_choices_list)
+
+        const wrong_answer_sep = document.createElement("hr");
+        wrong_answer_sep.setAttribute("id", `wrong_list_${currentQuestionNumber}`);
+        results_box_content.insertBefore(wrong_answer_sep, results_box_content.childNodes[1])
+
+        for (const i in currentQuestionChoices) {
+            console.log(currentQuestionChoices[i]);
+            console.log("Object values", Object.values(currentQuestionChoices[i])[0]);
+            console.log("el.innerHTML: ", el.innerHTML);
+            console.log("Object.keys(currentQuestionChoices[i]): ", Object.keys(currentQuestionChoices[i]));
+
+            const wrongChoices = document.createElement("li");
+            wrongChoices.setAttribute("class", `wrong_list_item`);
+            wrongChoices.textContent = Object.keys(currentQuestionChoices[i]);
+            wrong_answer_choices_list.appendChild(wrongChoices);
+
+            if (Object.values(currentQuestionChoices[i])[0]) {
+                wrongChoices.setAttribute("style", `color: green; font-weight: 900`);
+            }
+
+            console.log("wrongChoices.innerHTML", wrongChoices.innerHTML)
+
+            if (wrongChoices.innerHTML === el.innerHTML.slice(3)) {
+                wrongChoices.setAttribute("style", `color: red`);
+            }
+
+
+        }
+
     }
 
     // wait a second
@@ -161,7 +195,19 @@ function viewResults() {
     question_box.appendChild(incorrect_answers_result);
     incorrect_answers_result.textContent = `Netačnih: ${incorrect_answers_counter}`;
 
-    console.log(wrong_answers_list)
+    // const quizContent = document.getElementById("quiz_content");
+    // quizContent.setAttribute("style", "flex-direction: column");
+
+    const questionBox = document.getElementById("question_box");
+    questionBox.setAttribute("style", "width: 15%")
+
+    const resultBoxContent = document.getElementById("results_box_content");
+    resultBoxContent.setAttribute("style", "max-height: unset; overflow-y: unset");
+    // resultBoxContent.setAttribute("style", "overflow-y: unset");
+
+    const resultBox = document.getElementById("results_box");
+    resultBox.setAttribute("style", "width: 85%");
+    // console.log(wrong_answers_list)
 
 }
 
