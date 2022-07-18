@@ -199,14 +199,14 @@ function viewResults() {
     // quizContent.setAttribute("style", "flex-direction: column");
 
     const questionBox = document.getElementById("question_box");
-    questionBox.setAttribute("style", "width: 15%")
+    questionBox.setAttribute("style", "flex: 15%");
 
     const resultBoxContent = document.getElementById("results_box_content");
     resultBoxContent.setAttribute("style", "max-height: unset; overflow-y: unset");
     // resultBoxContent.setAttribute("style", "overflow-y: unset");
 
     const resultBox = document.getElementById("results_box");
-    resultBox.setAttribute("style", "width: 85%");
+    resultBox.setAttribute("style", "flex: 85%");
     // console.log(wrong_answers_list)
 
 }
