@@ -1,4 +1,5 @@
 {% load static %}
+{% load svg %}
 <html lang="en">
 <head>
     
@@ -12,15 +13,16 @@
 <body>
     {% block header %}
     <header>
-      <div class="logo">Kratak Sadržaj</div>
+      <div class="logo">uletjeti.io</div>
       <nav>
         <ul class="nav_links">
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Testovi</a></li>
+          <li><a href="#">Skripte</a></li>
+          <li><a href="#">Pomoć</a></li>
         </ul>
       </nav>
-      <a class="contact_btn" href="#">Contact</a>
+      <a class="contact_btn" href="#"><button>Kontakt</button></a>
+      <h1>{% svg 'menu_icon' %}</h1>
     </header>
     {% endblock header %}
     {% block content %}{% endblock content %}

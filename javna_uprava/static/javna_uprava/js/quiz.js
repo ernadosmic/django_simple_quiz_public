@@ -150,13 +150,13 @@ function nextQuestionClick(value, id) {
             wrong_answer_choices_list.appendChild(wrongChoices);
 
             if (Object.values(currentQuestionChoices[i])[0]) {
-                wrongChoices.setAttribute("style", `color: green; font-weight: 900`);
+                wrongChoices.setAttribute("style", `color: var(--correct); font-weight: 900`);
             }
 
             console.log("wrongChoices.innerHTML", wrongChoices.innerHTML)
 
             if (wrongChoices.innerHTML === el.innerHTML.slice(3)) {
-                wrongChoices.setAttribute("style", `color: red`);
+                wrongChoices.setAttribute("style", `color: var(--incorrect); font-weight: 900`);
             }
 
 
