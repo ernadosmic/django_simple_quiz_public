@@ -7,24 +7,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Javna uprava</title>{% endblock title %}
+    {% block title %}<title>Uletjeti</title>{% endblock title %}
 </head>
 <body>
     {% block header %}
     <header>
-      <h1 id="nav_title">Kratak Sadržaj</h1>
+      <div class="logo">Kratak Sadržaj</div>
       <nav>
-        <ul>
-          <li><a href="#">Početna</a></li>
-          <li><a href="#">Kvizovi</a></li>
-          <li><a href="#">Skripte</a></li>
+        <ul class="nav_links">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
         </ul>
       </nav>
+      <a class="contact_btn" href="#">Contact</a>
     </header>
     {% endblock header %}
-    {% block content %}
-    {% endblock content %}
-    {% block footer %}
-    {% endblock footer %}
+    {% block content %}{% endblock content %}
+    {% block left-sidebar %}{% endblock left-sidebar %}
+    {% block right-sidebar %}{% endblock right-sidebar %}
+    {% block footer %}{% endblock footer %}
 </body>
 </html>

@@ -1,7 +1,46 @@
+/* Override */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    background-color: black;
+}
+
+/* Colors */
+:root {
+    /* basic */
+    --dominant: #16463F;
+    --accent-1: #195249;
+    --accent-2: #EAC1C6;
+    --accent-3: #E7E1D5;
+    --accent-4: #6D7179;
+
+    --secundary: #195378;
+    --secundary-accent: #7998AB;
+
+    /* fonts/backgrounds */
+    --dark: rgb(0, 0, 0, 0.87);
+    --dark-medium: rgb(0, 0, 0, 0.6);
+    --dark-disabled: rgb(0, 0, 0, 0.38);
+    --light: rgb(255, 255, 255, 0.87);
+    --light-medium: rgb(255, 255, 255, 0.6);
+    --light-disabled: rgb(255, 255, 255, 0.38);
+
+    /* correct/incorrect */
+    --correct: #155226;
+    --incorrect: #913610;
+}
+
+/***** Navigation bar *****/
+
+
+
 #content {
     max-width: 80%;
     margin: auto;
 }
+
 
 
 
@@ -52,6 +91,7 @@ ol>.wrong_list_item:before {
     bottom: 0;
     align-self: flex-start;
     transition: width 1s;
+    color: var(--font-dark);
 }
 
 #results_box {
@@ -71,7 +111,6 @@ div {
     font-weight: 600;
     font-size: xx-large;
     margin-bottom: 20px;
-    line-height: 120%;
 }
 
 .correct-answer {
@@ -199,69 +238,3 @@ button:hover {
     display: flex;
     flex-direction: row;
 } */
-
-
-/* Header */
-
-header {
-    display: flex;
-    box-shadow: 0 5px 8px #ddd;
-    margin-bottom: 25px;
-    height: 60;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#nav_title, header nav {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    height: 100%;
-    color: #f1f1f1;
-
-}
-
-#nav_title {
-    font-size: 1.2em;
-    width: 15%;
-    background-color: red;
-}
-
-header nav {
-    width: 85%;
-    background-color: aqua;
-    align-items: center;
-}
-
-header ul {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    background-color: #2C3333;
-    justify-content: flex-start;
-    align-items: center;
-
-}
-
-header li {
-    display: flex;
-    background-color: rebeccapurple;
-    height: 100%;
-    width: 10%;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-}
-
-header a {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: #E7F6F2;
-}
