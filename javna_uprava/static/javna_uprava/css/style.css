@@ -134,7 +134,7 @@ header button:hover {
 }
 
 @media all and (max-device-width: 720px) {
-    .nav_links {
+    .nav_links, .contact_btn {
         display: none;
     }
 
@@ -257,7 +257,7 @@ ol>.wrong_list_item:before {
 }
 
 #question_box button {
-    width: 100%;
+    width: 80%;
     border: 0px solid black;
     font-size: 100%;
     overflow: hidden;
@@ -265,6 +265,7 @@ ol>.wrong_list_item:before {
     min-height: 120px;
     max-height: 120px;
     margin-block: 15px;
+    max-width: 80%;
     background: var(--accent-3);
     /* Green border */
     color: #000000;

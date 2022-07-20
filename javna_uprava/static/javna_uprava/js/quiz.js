@@ -14,8 +14,11 @@ let currentQuestionChoices = null;
 let wrongAnswersMap = new Map();
 
 function* nextQuestion() {
+
     // console.log(counter);
     for (const i of jsQuestionList.keys()) {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
 
         // Golabl vars assignments
         currentQuestionNumber = i;
