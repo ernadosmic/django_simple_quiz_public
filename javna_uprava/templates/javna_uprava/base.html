@@ -1,5 +1,4 @@
 {% load static %}
-{% load svg %}
 <html lang="en">
 <head>
     
@@ -13,7 +12,7 @@
 <body>
     {% block header %}
     <header>
-      <div class="logo">uletjeti.io</div>
+      <a class="logo" href="{% url 'javna_uprava:index' %}">uletjeti.io</a>
       <nav>
         <ul class="nav_links">
           <li><a href="#">Testovi</a></li>
@@ -22,8 +21,13 @@
         </ul>
       </nav>
       <a class="contact_btn" href="#"><button>Kontakt</button></a>
-      <h1>{% svg 'menu_icon' %}</h1>
+      <div class="menu_icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
+    
     {% endblock header %}
     {% block content %}{% endblock content %}
     {% block left-sidebar %}{% endblock left-sidebar %}

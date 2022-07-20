@@ -73,6 +73,7 @@ header button {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    height: 100%;
 }
 
 header button:hover {
@@ -101,11 +102,48 @@ header button:hover {
     padding: 10px 20px;
 }
 
+.menu_icon {
+    width: 25px;
+    height: 100%;
+    position: relative;
+    margin: 10px 20px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+}
+
+.menu_icon span {
+    display: block;
+    position: absolute;
+    background-color: var(--accent-3);
+    border-radius: 9px;
+    height: 2px;
+    width: 100%;
+    color: white;
+}
+
+.menu_icon span:first-child {
+    top: -8px;
+
+}
+
+.menu_icon span:last-child {
+    top: 8px;
+
+}
+
 @media all and (max-device-width: 720px) {
-    .nav_links, .contact_btn {
+    .nav_links {
         display: none;
     }
+
+    .menu_icon {
+        display: block;
+    }
 }
+
+
 
 /* Content */
 
