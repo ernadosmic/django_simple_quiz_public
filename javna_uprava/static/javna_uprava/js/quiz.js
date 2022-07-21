@@ -3,7 +3,6 @@ console.log(jsQuestionList.size);
 // Global vars
 const nextQ = nextQuestion();
 
-
 let correct_answers_counter = 0;
 let incorrect_answers_counter = 0;
 let counter = 0;
@@ -27,17 +26,6 @@ function* nextQuestion() {
 
         counter++;
 
-        // Debugging
-        // console.log("currentQuestionNumber: " + currentQuestionNumber);
-        // console.log("currentQuestionText: " + currentQuestionText);
-        // console.log("currentQuestionChoices: " + currentQuestionChoices);
-
-        // for (const x in currentQuestionChoices) {
-        //     console.log(Object.keys(currentQuestionChoices[x])[0]);
-        // }
-
-
-
         // Try to remove current question box if it exists
         try {
             const elem = document.getElementById("current_question_box");
@@ -47,14 +35,15 @@ function* nextQuestion() {
         // For every question create a div
         const current_question_box = document.createElement("div");
         current_question_box.setAttribute("id", "current_question_box");
+        current_question_box.setAttribute("class", "current_question_box");
         document.getElementById("question_box").appendChild(current_question_box);
 
 
         // Create question text inside a created div
         const current_question_text = document.createElement("div");
         current_question_text.setAttribute("id", "current_question_text");
-        current_question_text.setAttribute("style", "display: inline");
-        current_question_text.textContent = `${counter}. ${currentQuestionText}`;
+        current_question_text.setAttribute("class", "current_question_text");
+        current_question_text.innerHTML = `${counter}. ${currentQuestionText}`;
         document
             .getElementById("current_question_box")
             .appendChild(current_question_text);
@@ -62,6 +51,7 @@ function* nextQuestion() {
         // Create current_choices_box
         const current_choices_box = document.createElement("div");
         current_choices_box.setAttribute("id", "current_choices_box");
+        current_choices_box.setAttribute("class", "current_choices_box");
         document
             .getElementById("current_question_box")
             .appendChild(current_choices_box);
@@ -72,6 +62,7 @@ function* nextQuestion() {
             try {
                 const btn = document.createElement("button");
                 btn.setAttribute("id", `${i}${x}`);
+                btn.setAttribute("class", `choice_button`);
                 btn.setAttribute("onclick", `nextQuestionClick(${Object.values(currentQuestionChoices[x])[0]}, ${i}${x})`);
                 btn.setAttribute("value", Object.values(currentQuestionChoices[x])[0]);
                 btn.textContent = `${x}) ${Object.keys(currentQuestionChoices[x])[0]}`;
@@ -106,10 +97,12 @@ function nextQuestionClick(value, id) {
 
     // If the answer is correct, do this
     if (value) {
+        window.navigator.vibrate([50]);
         correct_answers_counter++;
         // If the answer is not correct, do this
     } else {
-        el.setAttribute('class', 'incorrect-answer');
+        el.setAttribute("class", "incorrect-answer");
+        window.navigator.vibrate([200]);
         incorrect_answers_counter++;
 
         // Grab the question text
