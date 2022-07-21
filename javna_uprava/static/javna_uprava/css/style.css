@@ -43,13 +43,10 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
 }
 
-header * {
-    transition: all 1s ease;
-}
 
 header .logo {
     color: var(--light);
@@ -60,10 +57,7 @@ header .logo {
     font-size: 150%;
 }
 
-nav ul,
-li,
-a,
-button {
+nav ul, li, a, button {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: var(--light);
     text-decoration: none;
@@ -133,16 +127,29 @@ header button:hover {
     top: 8px;
 }
 
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--dominant);
+    top: 55px;
+    max-height: 0px;
+}
+
+
 @media all and (max-device-width: 720px) {
 
-    .nav_links,
-    .contact_btn {
+
+    nav {
         display: none;
-        transition: all 1s ease;
+        flex-direction: column;
+
+
     }
 
     .open_menu {
-        display: block;
+        display: flex;
+        max-height: 200px;
     }
 
     .menu_icon {
@@ -180,10 +187,10 @@ header button:hover {
         margin-top: 0;
     }
 
-    .contact_btn {
+    /* .contact_btn {
         margin-bottom: 10px;
         margin-top: 0px;
-    }
+    } */
 }
 
 /***** Content *****/

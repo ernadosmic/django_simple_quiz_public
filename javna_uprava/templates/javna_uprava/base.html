@@ -17,14 +17,14 @@
 
   <header>
     <a class="logo" href="{% url 'javna_uprava:index' %}">uletjeti.io</a>
-    <nav>
-      <ul id="nav_links" class="nav_links">
-        <li><a href="#">Testovi</a></li>
-        <li><a href="#">Skripte</a></li>
-        <li><a href="#">Pomoć</a></li>
-      </ul>
-    </nav>
+      <nav id="navigation_bar" class="navigation_bar">
+    <ul id="nav_links" class="nav_links">
+      <li><a href="#">Testovi</a></li>
+      <li><a href="#">Skripte</a></li>
+      <li><a href="#">Pomoć</a></li>
+    </ul>
     <a id="contact_btn" class="contact_btn" href="#"><button>Kontakt</button></a>
+  </nav>
     <div id="menu_icon" class="menu_icon">
       <span></span>
       <span></span>
@@ -32,20 +32,23 @@
     </div>
   </header>
 
+
   {% endblock header %}
   {% block content %}{% endblock content %}
   {% block left-sidebar %}{% endblock left-sidebar %}
   {% block right-sidebar %}{% endblock right-sidebar %}
   {% block footer %}{% endblock footer %}
+  {% block scripts %}
   <script>
     const toggleButton = document.getElementById("menu_icon");
-    const navList = document.getElementById("nav_links");
-    const contactButton = document.getElementById("contact_btn");
-
+    const navList = document.getElementById("navigation_bar");
     toggleButton.addEventListener("click", () => {
-      navList.classList.toggle("open_menu");
-      contactButton.classList.toggle("open_menu");
+        navList.classList.toggle("open_menu");
+        toggleButton.classList.toggle("open_menu");
+        window.navigator.vibrate([80]);
     });
+    
+  {% endblock scripts %}
   </script>
 </body>
 
