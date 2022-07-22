@@ -4,6 +4,7 @@
 
 <head>
     {% block head %}{% endblock head %}
+    <script src="https://kit.fontawesome.com/1e0e201c56.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static "css/main_style.css" %}" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,31 +16,24 @@
 <body>
 
     <!-- MAIN HEADER -->
-    <header id="header_id">
-        <div id="">
-
-        </div>
-        <a class="logo" href="{% url 'home:index' %}">ulet.io</a>
-        <nav id="navigation_bar" class="navigation_bar">
-            <ul id="nav_links" class="nav_links">
-                <li><a href="{% url 'javna_uprava_vss_brcko:index' %}">Testovi</a></li>
-                <li><a href="#">Skripte</a></li>
-                <li><a href="#">Pomoć</a></li>
+    <header id="header">
+        <nav class="navbar">
+            <ul>
+                <li class="nav-logo"><a href="{% url "home:index" %}">uletjeti.io</a></li>
+                <li class="nav-toggle"><i class="fa-solid fa-bars"></i></li>
+                <li class="nav-links"><a href="#">Testovi</a></li>
+                <li class="nav-links"><a href="#">Skripte</a></li>
+                <li class="nav-links"><a href="#">Pomoć</a></li>
+                <li class="nav-buttons"><button>Kontakt</button></li>
             </ul>
-            <a id="contact_btn" class="contact_btn" href="#"><button>Kontakt</button></a>
         </nav>
-        <div id="menu_icon" class="menu_icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </header>
 
     <!-- CONTENT -->
     {% block content %}{% endblock content %}
 
     <!--  MAIN FOOTER -->
-    <footer id="footer" class="footer">
+    <footer id="footer">
         <div class="footer_container"></div>
     </footer>
 
@@ -47,27 +41,46 @@
     <!-- MAIN SCRIPT -->
     <script>
         // MENU TOGGLE
-        const toggleButton = document.getElementById("menu_icon");
-        const navList = document.getElementById("navigation_bar");
-        toggleButton.addEventListener("click", () => {
-            navList.classList.toggle("open_menu");
-            toggleButton.classList.toggle("open_menu");
-            window.navigator.vibrate([80]);
+        const toggleButton = document.getElementsByClassName("nav-toggle")[0];
+        const navLinks = document.getElementsByClassName("nav-links");
+        const navButtons = document.getElementsByClassName("nav-buttons");
+        toggleButton.addEventListener("click", function() {
+            for (const i of navLinks) {
+                i.classList.toggle("open-menu");
+                //navLinks[i].classList.toggle("open-menu");
+            };
+            for (const i of navButtons) {
+                i.classList.toggle("open-menu");
+                //navButtons[i].classList.toggle("open-menu");
+            };
         });
 
-        // CLICK AWAY
+        // CLICK AWAY MENU
         window.onclick = function (e) {
-            if (!document.getElementById("header_id").contains(e.target)) {
-                navList.classList.remove("open_menu");
+            if (!document.getElementById("header").contains(e.target)) {
+                for (const i of navLinks) {
+                    i.classList.remove("open-menu");
+                    //navLinks[i].classList.toggle("open-menu");
+                };
+                for (const i of navButtons) {
+                    i.classList.remove("open-menu");
+                    //navButtons[i].classList.toggle("open-menu");
+                };
             };
         };
 
-        // SCROLL AWAY
+        // SCROLL AWAY MENU
         window.onscroll = function () {
-            navList.classList.remove("open_menu");
+            for (const i of navLinks) {
+                i.classList.remove("open-menu");
+                //navLinks[i].classList.toggle("open-menu");
+            };
+            for (const i of navButtons) {
+                i.classList.remove("open-menu");
+                //navButtons[i].classList.toggle("open-menu");
+            };
         }
     </script>
-
 </body>
 
 </html>
