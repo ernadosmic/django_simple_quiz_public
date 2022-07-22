@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'javna_uprava.apps.JavnaUpravaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'django_simple_quiz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

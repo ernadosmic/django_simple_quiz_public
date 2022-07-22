@@ -1,7 +1,10 @@
-{% extends 'javna_uprava/base.html' %}
+{% extends 'main_base.html' %}
 {% block content %}
+<div id="content">
 
-<a href="{% url 'javna_uprava:quiz' total_questions %}">351</a>
-<a href="{% url 'javna_uprava:quiz' 25 %}">25</a>
+    <a href="{% url 'javna_uprava:quiz' total_questions %}">351</a>
+    <a href="{% url 'javna_uprava:quiz' 25 %}">25</a>
+</div>
+
 
 {% endblock content %}

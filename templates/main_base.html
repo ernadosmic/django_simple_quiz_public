@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/main_style.css" %}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}
+    <title>Uletjeti</title>
+    {% endblock title %}
+  </head>
+
+  <body>
+    {% block header %}
+
+    <header id="header_id">
+      <a class="logo" href="{% url 'home:index' %}">ulet.io</a>
+      <nav id="navigation_bar" class="navigation_bar">
+        <ul id="nav_links" class="nav_links">
+          <li><a href="#">Testovi</a></li>
+          <li><a href="#">Skripte</a></li>
+          <li><a href="#">Pomoć</a></li>
+        </ul>
+        <a id="contact_btn" class="contact_btn" href="#"
+          ><button>Kontakt</button></a
+        >
+      </nav>
+      <div id="menu_icon" class="menu_icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    {% endblock header %} 
+    {% block content %}{% endblock content %} 
+    
+    
+    
+    {% block footer %}
+    <footer id="footer" class="footer">
+      <div class="footer_container"></div>
+    </footer>
+    {% endblock footer %} 
+    
+    {% block scripts %}
+    <script>
+      const toggleButton = document.getElementById("menu_icon");
+      const navList = document.getElementById("navigation_bar");
+      toggleButton.addEventListener("click", () => {
+          navList.classList.toggle("open_menu");
+          toggleButton.classList.toggle("open_menu");
+          window.navigator.vibrate([80]);
+      });
+      window.onclick = function (e) {
+          if (!document.getElementById("header_id").contains(e.target)) {
+              navList.classList.remove("open_menu");
+          };
+      };
+
+      window.onscroll = function () {
+          navList.classList.remove("open_menu");
+      }
+
+      {% endblock scripts %}
+    </script>
+  </body>
+</html>
