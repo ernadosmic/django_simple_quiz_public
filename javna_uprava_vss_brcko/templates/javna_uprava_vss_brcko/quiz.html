@@ -6,6 +6,7 @@
 {% endblock head %}
 
 
+
 {% block content %}
 
 <div id="content">
@@ -34,15 +35,14 @@
                 {% endif %}
             {% endfor %}
         {% endfor %}
-    }
+    };
 
-    document.addEventListener('DOMContentLoaded', function() {
-        createQuestionMap()
-     }, false);
-
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', () => {
+        createQuestionMap();
         nextQ.next();
-    }, false);
+    },
+    false);
+
 </script>
 <script type="text/javascript" src="{% static "javna_uprava_vss_brcko/js/quiz.js" %}"></script>
 
