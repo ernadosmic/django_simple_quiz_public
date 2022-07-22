@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,7 +16,7 @@
 <body>
   {% block header %}
 
-  <header>
+  <header id="header_id">
     <a class="logo" href="{% url 'javna_uprava:index' %}">uletjeti.io</a>
       <nav id="navigation_bar" class="navigation_bar">
     <ul id="nav_links" class="nav_links">
@@ -31,13 +32,16 @@
       <span></span>
     </div>
   </header>
-
-
   {% endblock header %}
   {% block content %}{% endblock content %}
-  {% block left-sidebar %}{% endblock left-sidebar %}
-  {% block right-sidebar %}{% endblock right-sidebar %}
-  {% block footer %}{% endblock footer %}
+  {% block footer %}
+  <footer id="footer" class="footer">
+    <div class="footer_container">
+
+    </div>
+
+  </footer>
+  {% endblock footer %}
   {% block scripts %}
   <script>
     const toggleButton = document.getElementById("menu_icon");
@@ -47,6 +51,15 @@
         toggleButton.classList.toggle("open_menu");
         window.navigator.vibrate([80]);
     });
+    window.onclick = function (e) {
+      if (!document.getElementById("header_id").contains(e.target)){
+        navList.classList.remove("open_menu");
+      };
+    };
+
+    window.onscroll = function () {
+      navList.classList.remove("open_menu");
+    }
     
   {% endblock scripts %}
   </script>

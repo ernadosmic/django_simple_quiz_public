@@ -9,6 +9,7 @@ let counter = 0;
 let currentQuestionNumber = 0;
 let currentQuestionText = 0;
 let currentQuestionChoices = null;
+let quizFinished = false
 
 let wrongAnswersMap = new Map();
 
@@ -192,6 +193,8 @@ function nextQuestionClick(value, id) {
 }
 
 function viewResults() {
+    quizFinished = true
+
     try {
         const elem = document.getElementById("current_question_box");
         elem.parentNode.removeChild(elem);
@@ -199,9 +202,17 @@ function viewResults() {
 
     const question_box = document.getElementById("question_box");
 
+
+
     const results = document.createElement("div");
     results.setAttribute("id", "results");
     question_box.appendChild(results);
+
+    const again_btn = document.createElement("button");
+    again_btn.setAttribute("class", "again_btn");
+    again_btn.setAttribute("onClick", "window.location.reload()");
+    again_btn.innerHTML = "Ponovo"
+    question_box.appendChild(again_btn);
 
     const correct_answers_result = document.createElement("div");
     correct_answers_result.setAttribute("id", "correct_answers_result");
@@ -220,6 +231,7 @@ function viewResults() {
 
     const questionBox = document.getElementById("question_box");
     questionBox.setAttribute("style", "flex: 15%");
+    questionBox.setAttribute("style", "display: flex");
 
     const resultBoxContent = document.getElementById("results_box_content");
     resultBoxContent.setAttribute(
@@ -234,6 +246,11 @@ function viewResults() {
 }
 
 // Warning message if the user wants to leave the quiz
+
+
 window.onbeforeunload = function () {
-    return "Data will be lost if you leave the page, are you sure?";
-};
+    if (!quizFinished) {
+        return "Data will be lost if you leave the page, are you sure?";
+
+    }
+}
