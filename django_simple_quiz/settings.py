@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import sys
 from pathlib import Path
 import os
 
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'svg'
 ]
+
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # One apps folder
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
