@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
-    'javna_uprava.apps.JavnaUpravaConfig',
+    'javna_uprava_vss_brcko.apps.JavnaUpravaVssBrckoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -7,7 +7,7 @@ import random
 
 def index(request):
     total_questions = Question.objects.all().count()
-    return render(request, 'javna_uprava/index.html', {'total_questions': total_questions})
+    return render(request, 'javna_uprava_vss_brcko/index.html', {'total_questions': total_questions})
 
 
 def quiz(request, question_num_in_quiz):
@@ -28,7 +28,7 @@ def quiz(request, question_num_in_quiz):
     }
 
     # for i in range (question_num_in_quiz):
-    return render(request, 'javna_uprava/quiz.html', context)
+    return render(request, 'javna_uprava_vss_brcko/quiz.html', context)
     return HttpResponse(f'{item.question_num}. {item} --> {item.choice_set.get(correct_choice=True)}')
 
 
