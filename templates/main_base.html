@@ -1,7 +1,8 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+{% block head %}
+    <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/main_style.css" %}" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,16 +10,16 @@
     {% block title %}
     <title>Uletjeti</title>
     {% endblock title %}
-  </head>
+    </head>
+{% endblock head %}
 
   <body>
     {% block header %}
-
     <header id="header_id">
       <a class="logo" href="{% url 'home:index' %}">ulet.io</a>
       <nav id="navigation_bar" class="navigation_bar">
         <ul id="nav_links" class="nav_links">
-          <li><a href="#">Testovi</a></li>
+          <li><a href="{% url 'javna_uprava_vss_brcko:index' %}">Testovi</a></li>
           <li><a href="#">Skripte</a></li>
           <li><a href="#">Pomoć</a></li>
         </ul>
@@ -32,7 +33,8 @@
         <span></span>
       </div>
     </header>
-    {% endblock header %} 
+    {% endblock header %}
+
     {% block content %}{% endblock content %} 
     
     
@@ -44,6 +46,7 @@
     {% endblock footer %} 
     
     {% block scripts %}
+
     <script>
       const toggleButton = document.getElementById("menu_icon");
       const navList = document.getElementById("navigation_bar");
