@@ -18,7 +18,7 @@
     <!-- MAIN HEADER -->
     <header id="header">
         <nav class="navbar">
-            <ul>
+            <ul class="nav-menu">
                 <li class="nav-logo"><a href="{% url "home:index" %}">uletjeti.io</a></li>
                 <li class="nav-toggle"><i class="fa-solid fa-bars"></i></li>
                 <li class="nav-links"><a href="{% url 'javna_uprava_vss_brcko:index' %}">Javna uprava VSS Brčko</a></li>
@@ -34,7 +34,39 @@
 
     <!--  MAIN FOOTER -->
     <footer id="footer">
-        <div class="footer_container"></div>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col state">
+                    <h4>cilj</h4>
+                    <div class="statement">
+
+                        <p>
+                            uletjeti.io ima za cilj da obezbijedi korisnicima pristup platformi pomoću koje se mogu pripremiti za intervjue za zapošljavanje u javnim i državnim ustanovama na prostoru Bosne i Hercegovine. S obzirom na neefikasnost ovdašnjih administrativnih (iako pretrpanih) struktura, te na nasumičnost, nepotističke pretenzije i sijaset drugih faktora koji utječu na zapošljavanje kadrova u ovoj sferi, Uletjeti.io želi da omogući jednostavnu pripremu za proces pismenih ispita u ovoj sferi. Sretno!
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>poveznice</h4>
+                    <ul>
+                        <li><a href="#">placeholder</a></li>
+                        <li><a href="#">placeholder</a></li>
+                        <li><a href="#">placeholder</a></li>
+                        <li><a href="#">placeholder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>društvene mreže</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <span>Copyright © 2022, uletjeti.io</span>
+            </div>
+        </div>
     </footer>
 
 
@@ -44,7 +76,7 @@
         const toggleButton = document.getElementsByClassName("nav-toggle")[0];
         const navLinks = document.getElementsByClassName("nav-links");
         const navButtons = document.getElementsByClassName("nav-buttons");
-        toggleButton.addEventListener("click", function() {
+        toggleButton.addEventListener("click", function () {
             for (const i of navLinks) {
                 i.classList.toggle("open-menu");
                 //navLinks[i].classList.toggle("open-menu");

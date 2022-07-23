@@ -36,11 +36,33 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-image: url("../img/bg.jpg");
+  background-size: auto;
+  background-position: center;
+  background-clip: border-box;
+  background-repeat: no-repeat;
 }
 
 /**** Header ****/
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#header,
+#footer {
+  box-shadow: 0 2px 25px 0px rgba(0, 0, 0, 0.25);
+}
+
 .navbar ul {
   display: flex;
   width: 100%;
@@ -63,7 +85,6 @@ body {
   flex: 1;
   font-size: 1.5rem;
   user-select: none;
-  cursor: pointer;
 }
 
 .nav-toggle {
@@ -71,7 +92,6 @@ body {
 }
 
 .nav-links {
-  cursor: pointer;
   transition: 0.3s ease;
 }
 
@@ -81,6 +101,7 @@ body {
 
 .nav-links a {
   color: var(l);
+  display: block;
   transition: 0.3s ease;
 }
 
@@ -106,9 +127,8 @@ li.nav-buttons {
   background-color: var(--secondary-light);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   * {
-    cursor: default;
   }
 
   .navbar ul {
@@ -126,7 +146,6 @@ li.nav-buttons {
 
   .nav-links {
     display: none;
-    cursor: default;
     width: 100%;
     text-align: center;
   }
@@ -172,6 +191,8 @@ li.nav-buttons {
 }
 
 @media all and (orientation: landscape) and (max-device-width: 915px) {
+  * {
+  }
   #content {
     width: 100%;
   }
@@ -203,6 +224,8 @@ li.nav-buttons {
 }
 
 .current_question_text {
+  color: var(--light);
+  background-color: var(--dark-disabled);
   width: 100%;
   font-weight: 700;
   font-size: 200%;
@@ -218,11 +241,11 @@ li.nav-buttons {
   min-height: 80px;
   background: var(--light);
   padding: 10px 10px;
-  cursor: pointer;
   display: block;
   text-align: left;
   margin-top: 10px;
   font-size: 160%;
+  cursor: pointer;
 }
 
 .current_choices_box .choice_button:hover {
@@ -238,7 +261,6 @@ li.nav-buttons {
   border-radius: 25px;
   min-height: 80px;
   padding: 10px 10px;
-  cursor: pointer;
   display: block;
   text-align: left;
   margin-top: 10px;
@@ -255,7 +277,6 @@ li.nav-buttons {
   border-radius: 25px;
   min-height: 80px;
   padding: 10px 10px;
-  cursor: pointer;
   display: block;
   text-align: left;
   margin-top: 10px;
@@ -272,7 +293,6 @@ li.nav-buttons {
   border-radius: 25px;
   min-height: 80px;
   padding: 10px 10px;
-  cursor: pointer;
   display: block;
   text-align: left;
   margin-top: 10px;
@@ -289,7 +309,6 @@ li.nav-buttons {
   border-radius: 25px;
   min-height: 80px;
   padding: 10px 10px;
-  cursor: pointer;
   display: block;
   text-align: left;
   margin-top: 10px;
@@ -306,6 +325,12 @@ li.nav-buttons {
 
   #current_choices_box button {
     font-size: 120%;
+  }
+}
+
+@media (hover: none) {
+  * {
+    cursor: none !important;
   }
 }
 
@@ -382,6 +407,8 @@ li.nav-buttons {
 }
 
 @media all and (max-device-width: 720px) {
+  * {
+  }
   #results_box_content {
     font-size: 80%;
   }
@@ -415,6 +442,8 @@ ol > .wrong_list_item:before {
 }
 
 @media all and (max-device-width: 720px) {
+  * {
+  }
   #correct_answers_result {
     font-size: 160%;
     display: inline;
@@ -450,6 +479,7 @@ ol > .wrong_list_item:before {
 .wrong_answer_container {
   animation: fadeIn 1s;
   border-radius: 25px;
+  padding-bottom: 15px;
 }
 
 #results_box_content p {
@@ -470,12 +500,14 @@ ol > .wrong_list_item:before {
 #results {
   width: 100%;
   text-align: center;
+  user-select: none;
 }
 
 #question_box .again_btn {
   margin: 15px 0 0 0;
   padding: 1rem 2rem 1rem 2rem;
   width: 100%;
+  cursor: pointer;
   order: 1;
   background-color: var(--secondary);
   color: var(--light);
@@ -492,9 +524,164 @@ ol > .wrong_list_item:before {
 /***** footer *****/
 
 #footer {
-  position: absolute;
-  top: 0;
-  height: 140px;
   background-color: var(--primary);
-  background-color: red;
+  padding: 2rem;
+  padding-top: 0;
+  padding-bottom: 0rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  margin: auto;
+  width: 80%;
+  padding: auto;
+}
+
+.footer-col {
+  width: 25%;
+  /* flex: 1; */
+  padding: 1rem;
+}
+.state {
+  width: 50%;
+  padding-right: 5rem;
+}
+.statement {
+  font-size: 0.8rem;
+  color: var(--light);
+  display: inline;
+  line-height: 1.2rem;
+  padding-right: 2rem;
+}
+
+.footer-row {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.footer-col h4 {
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+}
+
+.footer-row ul li {
+  list-style-type: none;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.footer-row a {
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: var(--light-disabled);
+}
+
+.footer-row li a:hover {
+  padding-left: 0.3rem;
+  color: var(--light);
+}
+
+.footer-row h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background-color: var(--secondary);
+  height: 2px;
+  width: 50px;
+}
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--light-disabled);
+  text-decoration: none;
+  color: var(--light-disabled);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  transition: 0.3 ease;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  background-color: var(--light-disabled);
+}
+
+@media (max-width: 890px) {
+  * {
+  }
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .footer-col.state {
+    width: 100%;
+    order: 3;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 473px) {
+  * {
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.footer-copyright {
+  color: var(--light-disabled);
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 4rem;
+}
+
+/**** Home ****/
+#home-index-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 600px;
+}
+
+select {
+  margin-top: 50px;
+  opacity: 80%;
+  padding: 15px;
+  font-size: 2rem;
+  min-width: 40%;
+  min-height: 2rem;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+}
+
+option {
+  opacity: 80%;
+}
+
+@media (max-width: 720px) {
+  select {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  select {
+    font-size: 1rem;
+  }
 }
