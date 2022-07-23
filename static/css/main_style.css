@@ -51,8 +51,8 @@ body {
   flex-direction: column;
   min-height: 100%;
   /* background-image: linear-gradient(45deg, var(--white), var(--light-disabled)); */
-  background-image: url("../img/bg.jpg");
-  background-size: auto;
+  background-image: url("../img/bg.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -532,7 +532,7 @@ ol > .wrong_list_item:before {
   background-color: var(--secondary);
   color: var(--light);
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 25px;
   border: 0px solid black;
   transition: background-color 0.3s ease;
   font-weight: 900;
