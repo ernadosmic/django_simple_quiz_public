@@ -1,14 +1,26 @@
 {% extends 'main_base.html' %}
 {% block content %}
 <div id="home-index-main">
-    <select name="upravna jedinica" id="upravna-jedinica-dropdown">
+    {% comment %} <select name="upravna jedinica" id="upravna-jedinica-dropdown">
         <option value="" disabled selected hidden>Odaberi upravnu jedinicu...</option>
         <option value="brcko">Brčko distrikt Bosne i Hercegovine</option>
         <option value="federacija">Federacija Bosne i Hercegovine</option>
         <option value="republika_srpska">Republika srpska Bosne i Hercegovine</option>
-    </select>
+    </select> {% endcomment %}
+    <div class="select-container">
 
-
+        <div class="select-menu">
+            <button>
+                Odaberi upravnu jedinicu...
+            </button>
+        </div>
     
+        <div class="select-options-container">
+            <button>Brčko distrikt Bosne i Hercegovine</button>
+            <button>Federacija Bosne i Hercegovine</button>
+            <button>Republika srpska Bosne i Hercegovine</button>
+        </div>
+    </div>
+
 </div>
 {% endblock content %}

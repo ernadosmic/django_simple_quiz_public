@@ -45,7 +45,7 @@ html {
   height: 100%;
 }
 
-#id {
+#bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -54,6 +54,12 @@ html {
   background-image: url(../img/bg.png);
   background-size: cover;
   z-index: -1;
+}
+
+main {
+  min-height: calc(100vh - 295px);
+  width: 100%;
+  padding: 25px;
 }
 
 body {
@@ -686,7 +692,6 @@ ol > .wrong_list_item:before {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 600px;
 }
 
 select {
@@ -743,4 +748,37 @@ option {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--dark-rgb), 0.5);
+}
+
+/**** custom select ****/
+.select-container,
+.select-menu,
+.select-options-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-menu button {
+  font-size: 1.5rem;
+  min-width: 40vw;
+  min-height: 3rem;
+}
+
+.select-menu button::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f0da";
+  float: right;
+  color: white;
+  background-color: #123a34;
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+}
+
+.select-options-container {
+  flex-direction: row;
 }
