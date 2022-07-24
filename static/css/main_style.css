@@ -11,6 +11,7 @@
 
   --secondary: #195378;
   --secondary-rgb: 25, 83, 120;
+  --secondary-trans: rgba(var(var(--secondary-rgb), 0.8));
   --secondary-dark: #164a6a;
   --secondary-light: #1a587f;
 
@@ -18,14 +19,19 @@
   --black: #030303;
   --dark: #1a1a1a;
   --dark-rgb: 26, 26, 26;
+  --dark-trans: rgba(var(--dark-rgb), 0.8);
   --dark-medium: #333333;
   --dark-disabled: #4d4d4d;
 
   --white: #fcfcfc;
+  --white-rgb: 252, 252, 252;
+  --white-trans: rgba(var(--white-rgb), 0.8);
   --light: #f2f2f2;
   --light-rgb: 242, 242, 242;
   --light-trans: rgba(var(--light-rgb), 0.8);
   --light-medium: #e6e6e6;
+  --light-medium-rgb: 230, 230, 230;
+  --light-medium-trans: rgba(var(--light-medium-rgb), 0.8);
   --light-disabled: #d9d9d9;
 
   /* correct/incorrect */
@@ -694,41 +700,6 @@ ol > .wrong_list_item:before {
   align-items: flex-start;
 }
 
-select {
-  margin-top: 50px;
-  background-color: var(--light);
-  padding: 15px;
-  font-size: 2rem;
-  min-width: 40%;
-  min-height: 2rem;
-  border: 0;
-  border-radius: 25px;
-  background-color: rgba(var(--light-rgb), 0.8);
-  transition: 0.3s ease;
-  border: 3px solid rgba(0, 0, 0, 0);
-  outline: none;
-}
-
-select:hover {
-  border: 3px solid rgba(var(--light-rgb), 0.8);
-}
-
-option {
-  opacity: 80%;
-}
-
-@media (max-width: 720px) {
-  select {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 500px) {
-  select {
-    font-size: 1rem;
-  }
-}
-
 /**** Scrollbar ****/
 /* width */
 ::-webkit-scrollbar {
@@ -750,10 +721,11 @@ option {
   background: rgba(var(--dark-rgb), 0.5);
 }
 
-/**** custom select ****/
+/**** custom select home ****/
 .select-container,
 .select-menu,
-.select-options-container {
+.select-options-container,
+.options-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -762,23 +734,143 @@ option {
 }
 
 .select-menu button {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 10px;
+  max-width: 80%;
   font-size: 1.5rem;
   min-width: 40vw;
-  min-height: 3rem;
+  min-height: 4rem;
+  border-radius: 25px;
+  background-color: var(--light-trans);
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .select-menu button {
+    max-width: 90%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .select-menu button {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 320px) {
+  .select-menu button {
+    max-width: 90%;
+    font-size: 0.8rem;
+  }
+}
+
+.select-menu button:hover,
+.option-button:hover {
+  background-color: var(--light-medium-trans);
+}
+.select-menu button:active,
+.option-button:active {
+  background-color: var(--white-trans);
 }
 
 .select-menu button::after {
+  width: 25px;
   font-family: "Font Awesome 5 Free";
-  font-weight: 400;
+  font-weight: 900;
   content: "\f0da";
   float: right;
-  color: white;
-  background-color: #123a34;
+  color: var(--dark-disabled);
   margin: 0;
-  padding: 0;
-  line-height: 100%;
+  padding: 5px;
+  transition: 0.3s content;
+}
+.select-menu button:hover::after {
+  content: "\f0d7";
+}
+
+.options-container {
+  overflow: hidden;
 }
 
 .select-options-container {
-  flex-direction: row;
+  width: 37%;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .select-options-container {
+    width: 42%;
+  }
+}
+
+@media (max-width: 425px) {
+  .select-options-container {
+    width: 65%;
+  }
+}
+
+.option-button {
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1.3rem;
+  width: 100%;
+  min-height: 4rem;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--light-trans);
+}
+
+@media (max-width: 1074px) {
+  .option-button {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 946px) {
+  .option-button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 876px) {
+  .option-button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 718px) {
+  .option-button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .option-button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 606px) {
+  .option-button {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 546px) {
+  .option-button {
+    font-size: 0.65rem;
+  }
+}
+
+.option-button:first-child {
+  margin-top: 0px;
 }

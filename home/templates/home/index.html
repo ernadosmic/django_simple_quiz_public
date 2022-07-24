@@ -1,26 +1,47 @@
 {% extends 'main_base.html' %}
 {% block content %}
 <div id="home-index-main">
-    {% comment %} <select name="upravna jedinica" id="upravna-jedinica-dropdown">
-        <option value="" disabled selected hidden>Odaberi upravnu jedinicu...</option>
-        <option value="brcko">Brčko distrikt Bosne i Hercegovine</option>
-        <option value="federacija">Federacija Bosne i Hercegovine</option>
-        <option value="republika_srpska">Republika srpska Bosne i Hercegovine</option>
-    </select> {% endcomment %}
+
     <div class="select-container">
 
         <div class="select-menu">
-            <button>
+            <button id="select-button">
                 Odaberi upravnu jedinicu...
             </button>
         </div>
-    
-        <div class="select-options-container">
-            <button>Brčko distrikt Bosne i Hercegovine</button>
-            <button>Federacija Bosne i Hercegovine</button>
-            <button>Republika srpska Bosne i Hercegovine</button>
+
+        <div class="options-container">
+            <div class="select-options-container">
+                <button class="option-button">Brčko distrikt Bosne i Hercegovine</button>
+                <button class="option-button">Federacija Bosne i Hercegovine</button>
+                <button class="option-button">Republika srpska Bosne i Hercegovine</button>
+            </div>
         </div>
+
     </div>
+
+    <script>
+        const selectButton = document.getElementsByClassName("select-menu")[0];
+        const optionsButtons = document.getElementsByClassName("select-options-container")[0];
+        selectButton.addEventListener("click", function () {
+            if (optionsButtons.style.maxHeight) {
+                optionsButtons.style.maxHeight = null;
+            } else {
+
+                optionsButtons.style.maxHeight = optionsButtons.scrollHeight + "px";
+            }
+        });
+
+        window.addEventListener("click", function (event) {
+            if (event.target.id !== "select-button") {
+                optionsButtons.style.maxHeight = null;
+            }
+        })
+
+
+
+
+    </script>
 
 </div>
 {% endblock content %}
