@@ -1,5 +1,3 @@
-console.log(jsQuestionList.size);
-
 // Global vars
 const nextQ = nextQuestion();
 
@@ -14,7 +12,6 @@ let quizFinished = false
 let wrongAnswersMap = new Map();
 
 function* nextQuestion() {
-    // console.log(counter);
     for (const i of jsQuestionList.keys()) {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
@@ -57,7 +54,6 @@ function* nextQuestion() {
 
         // Create choices buttons
         for (const x in currentQuestionChoices) {
-            // console.log(Object.values(currentQuestionChoices[x])[0])
             try {
                 const btn = document.createElement("button");
                 btn.setAttribute("id", `${i}${x}`);
@@ -109,14 +105,9 @@ function nextQuestionClick(value, id) {
         document.getElementById("results_box").setAttribute("class", "res_shown");
 
         // Grab the question text
-        console.log(currentQuestionNumber);
-        console.log(currentQuestionText);
-        console.log(currentQuestionChoices);
-        console.log(el.innerHTML);
 
         wrongAnswersMap.set(currentQuestionNumber, currentQuestionText);
 
-        console.log(currentQuestionChoices);
 
         const wrong_answer_container = document.createElement("div");
         wrong_answer_container.setAttribute("id", `wrong_${currentQuestionNumber}`);
@@ -149,13 +140,6 @@ function nextQuestionClick(value, id) {
         );
 
         for (const i in currentQuestionChoices) {
-            console.log(currentQuestionChoices[i]);
-            console.log("Object values", Object.values(currentQuestionChoices[i])[0]);
-            console.log("el.innerHTML: ", el.innerHTML);
-            console.log(
-                "Object.keys(currentQuestionChoices[i]): ",
-                Object.keys(currentQuestionChoices[i])
-            );
 
             const wrongChoices = document.createElement("li");
             wrongChoices.setAttribute("class", `wrong_list_item`);
@@ -169,8 +153,6 @@ function nextQuestionClick(value, id) {
                 );
             }
 
-            console.log("wrongChoices.innerHTML", wrongChoices.innerHTML);
-
             if (wrongChoices.innerHTML === el.innerHTML.slice(3)) {
                 wrongChoices.setAttribute(
                     "style",
@@ -183,13 +165,11 @@ function nextQuestionClick(value, id) {
     // wait a second
     setTimeout(() => {
         if (counter === jsQuestionList.size) {
-            // console.log("IDEMO DALJE");
             viewResults();
         } else {
             nextQ.next();
         }
     }, "1000");
-    // console.log("Odmah");
 }
 
 function viewResults() {
@@ -242,7 +222,6 @@ function viewResults() {
 
     const resultBox = document.getElementById("results_box");
     resultBox.setAttribute("style", "flex: 85%");
-    // console.log(wrong_answers_list)
 }
 
 // Warning message if the user wants to leave the quiz
