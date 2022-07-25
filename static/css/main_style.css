@@ -39,6 +39,8 @@
   --incorrect: #913610;
 }
 
+/* #region ERNAD */
+
 /**** Setup ****/
 * {
   padding: 0;
@@ -46,19 +48,22 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/* #endregion */
 html {
   height: 100%;
 }
 
 #bg {
   position: fixed;
-  top: 0;
-  left: 0;
+  /* top: auto;
+  left: auto; */
   width: 100%;
   height: 100vh;
   background-image: url(../img/bg.png);
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
   z-index: -1;
 }
 
@@ -677,13 +682,6 @@ ol > .wrong_list_item:before {
 }
 
 @media (max-width: 473px) {
-  .footer-col.links {
-    order: 2;
-  }
-  .footer-col {
-    width: 100%;
-    margin-bottom: 30px;
-  }
 }
 
 .footer-copyright {
@@ -760,12 +758,6 @@ ol > .wrong_list_item:before {
     font-size: 1rem;
   }
 }
-@media (max-width: 320px) {
-  .select-menu button {
-    max-width: 90%;
-    font-size: 0.8rem;
-  }
-}
 
 .select-menu button:hover,
 .option-button:hover {
@@ -839,11 +831,13 @@ ol > .wrong_list_item:before {
   margin-top: 50px;
 }
 .quiz-cards {
+  opacity: 0;
   display: none;
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: flex-start;
+  transition: opacity 0.5s ease;
 }
 
 .card-index-subcontainer {
@@ -990,7 +984,33 @@ ol > .wrong_list_item:before {
   }
 }
 
-@media (max-width: 375px) {
+.show-card {
+  display: flex;
+  opacity: 1;
+}
+
+.clickable {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+/**** MEDIA QUERIES ****/
+@media (max-width: 320px) {
+  .select-menu button {
+    max-width: 90%;
+    font-size: 0.8rem;
+  }
+  .footer-col.links {
+    order: 2;
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
   .quiz-cards-container {
     width: 100%;
   }
@@ -1023,8 +1043,4 @@ ol > .wrong_list_item:before {
     width: 100%;
     margin: 5px 15px;
   }
-}
-
-.show-card {
-  display: flex;
 }
