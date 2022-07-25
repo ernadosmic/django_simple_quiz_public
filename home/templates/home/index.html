@@ -12,13 +12,29 @@
 
         <div class="options-container">
             <div class="select-options-container">
-                <button class="option-button">Brčko distrikt Bosne i Hercegovine</button>
-                <button class="option-button">Federacija Bosne i Hercegovine</button>
-                <button class="option-button">Republika srpska Bosne i Hercegovine</button>
+                <button value="brcko-quiz-cards" onclick="showCards(event)" class="option-button">Brčko distrikt Bosne i
+                    Hercegovine</button>
+                <button value="federacija-quiz-cards" onclick="showCards(event)" class="option-button">Federacija Bosne
+                    i
+                    Hercegovine</button>
+                <button value="rs-quiz-cards" onclick="showCards(event)" class="option-button">Republika srpska Bosne i
+                    Hercegovine</button>
             </div>
         </div>
-
     </div>
+
+    <div class="quiz-cards-container">
+        <div id="brcko-quiz-cards" class="quiz-cards">
+            {% include "home/brcko.html" %}
+        </div>
+        <div id="federacija-quiz-cards" class="quiz-cards">
+            {% include "home/federacija.html" %}
+        </div>
+        <div id="rs-quiz-cards" class="quiz-cards">
+            {% include "home/rs.html" %}
+        </div>
+    </div>
+
 
     <script>
         const selectButton = document.getElementsByClassName("select-menu")[0];
@@ -38,8 +54,16 @@
             }
         })
 
-
-
+        function showCards(event) {
+            for (const i of document.getElementsByClassName("quiz-cards")) {
+                if (i.classList.contains("show-card")) {
+                    i.classList.remove("show-card")
+                } else {
+                }
+            }
+            document.getElementById(event.target.value).classList.add("show-card")
+            selectButton.children[0].innerHTML = event.target.innerHTML;
+        }
 
     </script>
 
