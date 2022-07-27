@@ -197,14 +197,14 @@ function viewResults() {
     const correct_answers_result = document.createElement("div");
     correct_answers_result.setAttribute("id", "correct_answers_result");
     results.appendChild(correct_answers_result);
-    correct_answers_result.textContent = `${correct_answers_counter}`;
+    correct_answers_result.textContent = `✓ ${correct_answers_counter}`;
 
     // INCORRECT
 
     const incorrect_answers_result = document.createElement("div");
     incorrect_answers_result.setAttribute("id", "incorrect_answers_result");
     results.appendChild(incorrect_answers_result);
-    incorrect_answers_result.textContent = `${incorrect_answers_counter}`;
+    incorrect_answers_result.textContent = `✗ ${incorrect_answers_counter}`;
 
     // const quizContent = document.getElementById("quiz_content");
     // quizContent.setAttribute("style", "flex-direction: column");

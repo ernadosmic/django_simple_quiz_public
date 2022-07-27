@@ -493,24 +493,14 @@ ol > .wrong_list_item:before {
   color: var(--correct);
   font-size: 160%;
   display: block;
-  /* text-align: right; */
-}
-#correct_answers_result::before {
-  content: "✓";
-  float: left;
-  margin-left: auto;
+  text-align: right;
 }
 
 #incorrect_answers_result {
   color: var(--incorrect);
   font-size: 160%;
   display: block;
-  /* text-align: right; */
-}
-#incorrect_answers_result::before {
-  content: "✗";
-  float: left;
-  margin-left: auto;
+  text-align: right;
 }
 
 @media all and (max-device-width: 720px) {
@@ -957,8 +947,6 @@ ol > .wrong_list_item:before {
     width: 80%;
   }
 
-  .card-image {
-  }
   .card h1 {
     font-size: 0.8em;
   }
@@ -971,8 +959,6 @@ ol > .wrong_list_item:before {
     width: 100%;
   }
 
-  .card-image {
-  }
   .card h1 {
     font-size: 0.8em;
   }
@@ -985,8 +971,6 @@ ol > .wrong_list_item:before {
     width: 100%;
   }
 
-  .card-image {
-  }
   .card h1 {
     font-size: 0.8em;
   }
@@ -1011,15 +995,6 @@ ol > .wrong_list_item:before {
 
 /**** MEDIA QUERIES ****/
 @media (max-width: 320px) {
-  #correct_answers_result {
-    font-size: 160%;
-    text-align: right;
-  }
-  #incorrect_answers_result {
-    font-size: 160%;
-    text-align: right;
-  }
-
   #results {
     font-size: 0.8rem;
     margin-right: 15px;
