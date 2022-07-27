@@ -1,4 +1,5 @@
 /**** Variables ****/
+
 :root {
   /* basic colors */
   --primary: #16463f;
@@ -51,6 +52,10 @@
 /* #endregion */
 html {
   height: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 #bg {
@@ -732,7 +737,7 @@ ol > .wrong_list_item:before {
   align-items: center;
 }
 
-.select-menu button {
+#select-button {
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 10px;
@@ -745,46 +750,22 @@ ol > .wrong_list_item:before {
   border: none;
   cursor: pointer;
 }
-@media (max-width: 500px) {
-  .select-menu button {
-    max-width: 90%;
-    font-size: 1.2rem;
-  }
-}
 
-@media (max-width: 375px) {
-  .select-menu button {
-    max-width: 90%;
-    font-size: 1rem;
-  }
-}
-
-.select-menu button:hover,
+#select-button:hover,
 .option-button:hover {
   background-color: var(--light-medium-trans);
 }
-.select-menu button:active,
+#select-button:active,
 .option-button:active {
   background-color: var(--white-trans);
 }
 
-.select-menu button::after {
-  width: 25px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f0da";
-  float: right;
-  color: var(--dark-disabled);
-  margin: 0;
-  padding: 5px;
-  transition: 0.3s content;
-}
-.select-menu button:hover::after {
-  content: "\f0d7";
-}
-
 .options-container {
   overflow: hidden;
+}
+.card-index-title h1 {
+  margin: 0;
+  margin-block-start: 0;
 }
 
 .select-options-container {
@@ -828,7 +809,7 @@ ol > .wrong_list_item:before {
   flex-direction: column;
   width: 80%;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 .quiz-cards {
   opacity: 0;
@@ -1000,9 +981,22 @@ ol > .wrong_list_item:before {
 
 /**** MEDIA QUERIES ****/
 @media (max-width: 320px) {
-  .select-menu button {
-    max-width: 90%;
-    font-size: 0.8rem;
+  .select-menu {
+    width: 100%;
+  }
+  #select-button {
+    text-overflow: ellipsis;
+    /* word-break: keep-all; */
+    font-size: 100%;
+    min-width: 90%;
+    color: var(--dark);
+  }
+  .select-options-container {
+    width: 100%;
+  }
+  .option-button {
+    font-size: small;
+    max-width: 80%;
   }
   .footer-col.links {
     order: 2;
