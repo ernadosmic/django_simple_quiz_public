@@ -5,10 +5,14 @@
     <div class="select-container">
 
         <div class="select-menu">
-            <button id="select-button">
-                Odaberi upravnu jedinicu...
+            <button id="select-button" class="select-button">
+                Odaberite upravnu jedinicu
+                <i id="select-arrow-down" class="hideArrow thin fa-solid fa-angle-down select-button"></i>
+                <i id="select-arrow-right" class="thin fa-solid fa-angle-right select-button"></i>
             </button>
+
         </div>
+
 
         <div class="options-container">
             <div class="select-options-container">
@@ -37,16 +41,36 @@
 
 
     <script>
+        let arrowDown = document.getElementById("select-arrow-down");
+        let arrowRight = document.getElementById("select-arrow-right");
+
         const selectButton = document.getElementsByClassName("select-menu")[0];
         const optionsButtons = document.getElementsByClassName("select-options-container")[0];
+        const selectSpan = document.getElementById("select-span");
+
+
         selectButton.addEventListener("click", function () {
+            arrowDown = document.getElementById("select-arrow-down");
+            arrowRight = document.getElementById("select-arrow-right");
+
             if (optionsButtons.style.maxHeight) {
+
+
+                arrowDown.classList.toggle("hideArrow");
+                arrowRight.classList.toggle("hideArrow");
                 optionsButtons.style.maxHeight = null;
             } else {
 
+                arrowDown.classList.toggle("hideArrow");
+                arrowRight.classList.toggle("hideArrow");
+
                 optionsButtons.style.maxHeight = optionsButtons.scrollHeight + "px";
             }
+
         });
+
+
+
 
         window.addEventListener("click", function (event) {
             if (event.target.id !== "select-button") {
@@ -62,7 +86,9 @@
                 }
             }
             document.getElementById(event.target.value).classList.add("show-card")
-            selectButton.children[0].innerHTML = event.target.innerHTML;
+            selectButton.children[0].innerHTML = `${event.target.innerHTML}<i id="select-arrow-down" class="hideArrow thin fa-solid fa-angle-down select-button"></i>
+                <i id="select-arrow-right" class="thin fa-solid fa-angle-right select-button"></i>`;
+
         }
 
     </script>

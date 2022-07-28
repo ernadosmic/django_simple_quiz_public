@@ -77,7 +77,7 @@ html:focus-within {
 main {
   min-height: calc(100vh - 295px);
   width: 100%;
-  padding-top: 25px;
+  padding-top: 85px;
 }
 
 body {
@@ -88,7 +88,7 @@ body {
 
 /**** Header ****/
 #header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
   width: 100%;
@@ -732,10 +732,13 @@ ol > .wrong_list_item:before {
 }
 
 #select-button {
+  display: flex;
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 15px;
   font-size: 3vw;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 25px;
   background-color: var(--light-trans);
@@ -750,6 +753,15 @@ ol > .wrong_list_item:before {
 #select-button:active,
 .option-button:active {
   background-color: var(--white-trans);
+}
+.thin {
+  font-size: 60%;
+  color: var(--dark);
+  padding-left: 25px;
+}
+
+.hideArrow {
+  display: none;
 }
 
 .options-container {
@@ -828,7 +840,7 @@ ol > .wrong_list_item:before {
 }
 @media (max-width: 320px) {
   #select-button {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     width: 90%;
   }
   .option-button {
