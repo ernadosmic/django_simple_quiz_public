@@ -224,21 +224,6 @@ li.nav-buttons {
   margin-top: 5px;
 }
 
-@media all and (orientation: landscape) and (max-device-width: 915px) {
-  #content {
-    width: 100%;
-  }
-
-  #quiz_content {
-    flex-direction: column;
-  }
-
-  header {
-    position: unset;
-    top: unset;
-  }
-}
-
 /* Question Box */
 
 #question_box {
@@ -698,9 +683,6 @@ ol > .wrong_list_item:before {
   }
 }
 
-@media (max-width: 473px) {
-}
-
 .footer-copyright {
   color: var(--light-disabled);
   text-align: center;
@@ -752,11 +734,9 @@ ol > .wrong_list_item:before {
 #select-button {
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 10px;
-  max-width: 80%;
-  font-size: 1.5rem;
-  min-width: 40vw;
-  min-height: 4rem;
+  padding: 15px;
+  font-size: 3vw;
+
   border-radius: 25px;
   background-color: var(--light-trans);
   border: none;
@@ -790,29 +770,76 @@ ol > .wrong_list_item:before {
   transition: max-height 0.2s ease, opacity 0.5s ease;
 }
 
-@media (max-width: 768px) {
-  .select-options-container {
-    width: 42%;
-  }
-}
-
-@media (max-width: 425px) {
-  .select-options-container {
-    width: 65%;
-  }
-}
-
 .option-button {
   white-space: nowrap;
   cursor: pointer;
   padding: 10px;
   margin-top: 5px;
-  font-size: 1.3rem;
+  font-size: 2vw;
   width: 100%;
-  min-height: 4rem;
   border-radius: 25px;
   border: none;
   background-color: var(--light-trans);
+}
+
+@media (max-width: 1024px) {
+  #select-button {
+    font-size: 2rem;
+  }
+  .option-button {
+    font-size: 2.3vw;
+  }
+  .select-options-container {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  #select-button {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+  .option-button {
+    font-size: 2.5vw;
+  }
+  .select-options-container {
+    width: 50%;
+  }
+}
+@media (max-width: 425px) {
+  #select-button {
+    font-size: 1.3rem;
+    width: 90%;
+  }
+  .option-button {
+    font-size: 1rem;
+  }
+  .select-options-container {
+    width: 85%;
+  }
+}
+@media (max-width: 375px) {
+  #select-button {
+    font-size: 1.1rem;
+    width: 90%;
+  }
+  .option-button {
+    font-size: 0.9rem;
+  }
+  .select-options-container {
+    width: 85%;
+  }
+}
+@media (max-width: 320px) {
+  #select-button {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+  .option-button {
+    font-size: 0.8rem;
+  }
+  .select-options-container {
+    width: 85%;
+  }
 }
 
 /**** Quiz Cards Container ****/
@@ -954,18 +981,7 @@ ol > .wrong_list_item:before {
     width: 40%;
   }
 }
-@media (max-width: 768px) {
-  .quiz-cards-container {
-    width: 100%;
-  }
 
-  .card h1 {
-    font-size: 0.8em;
-  }
-  .card {
-    width: 40%;
-  }
-}
 @media (max-width: 425px) {
   .quiz-cards-container {
     width: 100%;
@@ -995,6 +1011,9 @@ ol > .wrong_list_item:before {
 
 /**** MEDIA QUERIES ****/
 @media (max-width: 320px) {
+  .card-index-subcontainer {
+    margin-bottom: 15px;
+  }
   #results {
     font-size: 0.8rem;
     margin-right: 15px;
@@ -1006,30 +1025,20 @@ ol > .wrong_list_item:before {
     margin-top: 5px;
   }
   .card-index-title {
-    padding-left: 10px;
-    font-size: 0.8rem;
+    padding-left: 0px;
+  }
+  .card-index-title h1 {
+    padding-left: 15px;
+    font-size: 1.5rem;
   }
   .card-index-subtitle {
-    padding-left: 10px;
-    font-size: 0.75rem;
+    padding-left: 0px;
   }
-  .select-menu {
-    width: 100%;
+  .card-index-subtitle h2 {
+    padding-left: 15px;
+    font-size: 1.2rem;
   }
-  #select-button {
-    text-overflow: ellipsis;
-    /* word-break: keep-all; */
-    font-size: 100%;
-    min-width: 90%;
-    color: var(--dark);
-  }
-  .select-options-container {
-    width: 100%;
-  }
-  .option-button {
-    font-size: small;
-    max-width: 80%;
-  }
+
   .footer-col.links {
     order: 2;
   }
@@ -1079,5 +1088,179 @@ ol > .wrong_list_item:before {
   .card {
     width: 100%;
     margin: 5px 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card-index-subcontainer {
+    margin-bottom: 15px;
+  }
+  #results {
+    font-size: 0.8rem;
+    margin-right: 15px;
+  }
+  #question_box {
+    padding-top: 0;
+  }
+  .quiz-cards-container {
+    margin-top: 5px;
+  }
+  .card-index-title {
+    padding-left: 0px;
+  }
+  .card-index-title h1 {
+    padding-left: 15px;
+    font-size: 1.5rem;
+  }
+  .card-index-subtitle {
+    padding-left: 0px;
+  }
+  .card-index-subtitle h2 {
+    padding-left: 15px;
+    font-size: 1.2rem;
+  }
+
+  .footer-col.links {
+    order: 2;
+  }
+  #footer {
+    margin: 0;
+    padding: 0;
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .footer-container {
+    margin: 0;
+    padding: 0;
+  }
+  .quiz-cards-container {
+    width: 100%;
+  }
+
+  .card-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-image {
+    width: 35%;
+    margin-right: 15px;
+  }
+  .card-image img {
+    border-radius: 5px;
+  }
+  .card-description {
+    flex: 1;
+    max-height: 60px;
+    font-size: 0.45em;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+  }
+  .card-link {
+    padding-bottom: 0;
+    padding-top: 5px;
+  }
+  .card h1 {
+    font-size: 0.8em;
+  }
+  .card {
+    width: 100%;
+    margin: 5px 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card-index-subcontainer {
+    margin-bottom: 15px;
+  }
+  #results {
+    font-size: 0.8rem;
+    margin-right: 15px;
+  }
+  #question_box {
+    padding-top: 0;
+  }
+  .quiz-cards-container {
+    margin-top: 5px;
+  }
+  .card-index-title {
+    padding-left: 0px;
+  }
+  .card-index-title h1 {
+    padding-left: 15px;
+    font-size: 1.6rem;
+  }
+  .card-index-subtitle {
+    padding-left: 0px;
+  }
+  .card-index-subtitle h2 {
+    padding-left: 15px;
+    font-size: 1.2rem;
+  }
+
+  .footer-col.links {
+    order: 2;
+  }
+  #footer {
+    margin: 0;
+    padding: 0;
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .footer-container {
+    margin: 0;
+    padding: 0;
+  }
+  .quiz-cards-container {
+    width: 100%;
+  }
+
+  .card-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-image {
+    width: 20%;
+    margin-right: 15px;
+  }
+  .card-image img {
+    border-radius: 5px;
+  }
+  .card-description {
+    flex: 1;
+    max-height: 60px;
+    font-size: 0.45em;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+  }
+  .card-link {
+    padding-bottom: 0;
+    padding-top: 5px;
+  }
+  .card h1 {
+    font-size: 0.8em;
+  }
+  .card {
+    width: 100%;
+    margin: 5px 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-index-title h1 {
+    padding-left: 15px;
+    font-size: 2rem;
+  }
+
+  .card-index-subtitle h2 {
+    padding-left: 15px;
+    font-size: 1.8rem;
   }
 }
