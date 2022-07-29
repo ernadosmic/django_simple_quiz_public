@@ -204,6 +204,10 @@ li.nav-buttons {
   }
 }
 
+.bigShadow {
+  box-shadow: 0 0 100px 100px rgba(var(--dark-rgb), 0.8);
+}
+
 /***** Content *****/
 
 #content {

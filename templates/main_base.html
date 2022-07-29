@@ -19,11 +19,11 @@
     <header id="header">
         <nav class="navbar">
             <ul class="nav-menu">
-                <li class="nav-logo"><a href="{% url "home:index" %}">uletjeti.io</a></li>
+                <li class="nav-logo"><a href="{% url 'home:index' %}">uletjeti.io</a></li>
                 <li class="nav-toggle"><i class="far fa-bars"></i></li>
-                <li class="nav-links"><a href="{% url 'javna_uprava_vss_brcko:index' %}">BDBiH</a></li>
-                <li class="nav-links"><a href="#">FBiH</a></li>
-                <li class="nav-links"><a href="#">RSBiH</a></li>
+                <li class="nav-links"><a href="{% url 'home:brcko' %}">Brčko distrikt</a></li>
+                <li class="nav-links"><a href="{% url 'home:federacija' %}">Federacija BiH</a></li>
+                <li class="nav-links"><a href="{% url 'home:rs' %}">Republika</a></li>
                 <li class="nav-buttons"><button>Kontakt</button></li>
             </ul>
         </nav>
@@ -52,7 +52,7 @@
                     <div class="statement">
 
                         <p>
-                            uletjeti.io ima za cilj da obezbijedi korisnicima pristup platformi pomoću koje se mogu pripremiti za intervjue za zapošljavanje u javnim i državnim ustanovama na prostoru Bosne i Hercegovine. S obzirom na neefikasnost ovdašnjih administrativnih (iako pretrpanih) struktura, te na nasumičnost, nepotističke pretenzije i sijaset drugih faktora koji utječu na zapošljavanje kadrova u ovoj sferi, Uletjeti.io želi da omogući jednostavnu pripremu za proces pismenih ispita u ovoj sferi. Sretno!
+                            uletjeti.io ima za cilj da obezbijedi korisnicima pristup platformi pomoću koje se mogu pripremiti za intervjue za zapošljavanje u javnim i državnim ustanovama na prostoru Bosne i Hercegovine. S obzirom na neefikasnost ovdašnjih administrativnih (iako pretrpanih) struktura, te na nasumičnost, nepotističke pretenzije i sijaset drugih faktora koji utječu na zapošljavanje kadrova u ovoj sferi, uletjeti.io želi da omogući jednostavnu pripremu za proces pismenih ispita u ovoj sferi. Sretno!
                         </p>
                     </div>
                 </div>
@@ -88,6 +88,7 @@
         const navLinks = document.getElementsByClassName("nav-links");
         const navButtons = document.getElementsByClassName("nav-buttons");
         toggleButton.addEventListener("click", function () {
+            // document.getElementById("header").setAttribute("style", "box-shadow: 0 0 50px 50px rgba(var(--dark-rgb), 0.8)");
             for (const i of navLinks) {
                 i.classList.toggle("open-menu");
                 //navLinks[i].classList.toggle("open-menu");
@@ -96,6 +97,7 @@
                 i.classList.toggle("open-menu");
                 //navButtons[i].classList.toggle("open-menu");
             };
+            
         });
 
         // CLICK AWAY MENU
@@ -123,6 +125,8 @@
                 //navButtons[i].classList.toggle("open-menu");
             };
         }
+
+
     </script>
 </body>
 

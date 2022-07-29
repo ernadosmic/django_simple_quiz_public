@@ -6,12 +6,12 @@ def index(request):
 
 
 def brcko(request):
-    return render(request, 'home/brcko.html')
+    return render(request, 'home/brcko_index.html')
 
 
 def federacija(request):
-    return render(request, 'home/federacija.html')
+    return render(request, 'home/federacija_index.html')
 
 
 def rs(request):
-    return render(request, 'home/rs.html')
+    return render(request, 'home/rs_index.html')

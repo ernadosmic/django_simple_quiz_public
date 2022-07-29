@@ -1,0 +1,16 @@
+{% extends 'main_base.html' %}
+{% block content %}
+<div id="home-index-main">
+
+    <div class="quiz-cards-container">
+        <div id="rs-quiz-cards" class="quiz-cards">
+            {% include "./rs.html" %}
+        </div>
+    </div>
+</div>
+<script>
+    const rsCards = document.getElementById("rs-quiz-cards");
+
+    rsCards.classList.add("show-card")
+</script>
+{% endblock content %}
