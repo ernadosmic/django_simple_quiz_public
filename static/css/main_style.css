@@ -72,6 +72,7 @@ html:focus-within {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  filter: brightness(80%);
 }
 
 main {
@@ -89,7 +90,7 @@ body {
 /**** Header ****/
 #header {
   position: fixed;
-  top: 0;
+  top: -2px;
   z-index: 100;
   width: 100%;
 }
@@ -136,7 +137,6 @@ body {
 }
 
 .nav-links a {
-  color: var(l);
   display: block;
   transition: 0.3s ease;
 }
@@ -732,6 +732,7 @@ ol > .wrong_list_item:before {
 }
 .select-menu {
   width: unset;
+  border-radius: 25px;
 }
 
 #select-button {
@@ -774,8 +775,19 @@ ol > .wrong_list_item:before {
   overflow: hidden;
 }
 .card-index-title h1 {
+  position: relative;
   margin: 0;
   margin-block-start: 0;
+}
+.card-index-title h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50%;
+  height: 2px;
+  padding-left: 0;
+  background-color: var(--incorrect);
 }
 
 .select-options-container {
@@ -885,18 +897,35 @@ ol > .wrong_list_item:before {
 .card-index-title {
   width: 80%;
   color: var(--light);
+  margin-bottom: 20px;
 }
 
 .card-index-subtitle {
+  margin-bottom: 20px;
+  position: relative;
   width: 80%;
   color: var(--light);
+}
+
+.card-index-subtitle h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50%;
+  height: 2px;
+  padding-left: 0;
+  background-color: var(--incorrect);
 }
 
 .card-index-hr {
   width: 33%;
   margin-bottom: 15px;
   margin-top: 5px;
-  /* color: var(--light); */
+  color: var(--incorrect);
+}
+.card hr {
+  background-color: var(--incorrect);
 }
 
 /* quiz cards */
@@ -1286,16 +1315,20 @@ ol > .wrong_list_item:before {
   justify-content: center;
   width: 100%;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .quiz-options-container div {
-  min-width: 500px;
+  width: 60%;
   background-color: rgba(var(--light-rgb), 0.8);
   border-radius: 25px;
   padding: 15px;
   cursor: pointer;
   margin-top: 25px;
+
+  transition: 0.3s ease;
 }
+
 .quiz-options-container div:hover {
   background-color: var(--dark-trans);
   color: var(--light);
@@ -1303,4 +1336,102 @@ ol > .wrong_list_item:before {
 
 .quiz-options-container div h1 {
   text-transform: uppercase;
+}
+.index-div {
+  position: relative;
+}
+
+.index-h1 {
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: var(--light);
+  /* width: 50%; */
+  margin-right: 0%;
+}
+.index-h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50%;
+  height: 2px;
+  background-color: var(--incorrect);
+}
+
+@media (max-width: 1024px) {
+  .quiz-options-container div {
+    width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .index-h1 {
+    font-size: 1.5rem;
+  }
+  .quiz-options-container div {
+    width: 90%;
+  }
+  .quiz-options-container div h1 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+  .quiz-options-container div p {
+    font-size: 0.8rem;
+  }
+}
+
+.index-home-title {
+  margin: auto;
+  margin-top: 2.5vw;
+  /* width: 60%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+}
+
+.index-home-title h1 {
+  font-size: 2.2rem;
+  padding-bottom: 1vw;
+  text-align: center;
+}
+
+.index-home-title p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.under-select {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--light);
+  margin-top: 20px;
+}
+
+@media (max-width: 425px) {
+  .index-home-title h1 {
+    padding: 0 5px 0 10px;
+    font-size: 1.5rem;
+    padding-bottom: 1vw;
+    text-align: center;
+  }
+
+  .index-home-title p {
+    font-size: 0.85rem;
+    padding: 0 5px 0 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .under-select {
+    font-size: 0.85rem;
+    padding: 0 5px 0 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--light);
+    margin-top: 20px;
+  }
 }

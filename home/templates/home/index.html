@@ -1,6 +1,11 @@
 {% extends 'main_base.html' %}
 {% block content %}
 <div id="home-index-main">
+    <div class="index-home-title">
+        <h1>Kvizovi za ispite u državnim službama</h1>
+        <p>Provjerite svoje znanje iz zakona, ustava i stručnih oblasti za ispite u državnoj službi BiH.</p>
+    </div>
+
 
     <div class="select-container">
 
@@ -26,6 +31,9 @@
             </div>
         </div>
     </div>
+    <p class="under-select">Generator omogućava izradu kvizova <b>uobičajenim redolsijedom</b> kao i kvizova
+        <b>nasumičnog redoslijeda</b> i odabira pitanja.
+    </p>
 
     <div class="quiz-cards-container">
         <div id="brcko-quiz-cards" class="quiz-cards">
@@ -72,19 +80,17 @@
 
 
         window.addEventListener("click", function (event) {
+
+
             if (optionsButtons.style.maxHeight) {
 
-                arrowDown.classList.remove("hideArrow");
-                arrowRight.classList.add("hideArrow");
             }
             if (event.target.id !== "select-button") {
-                if (optionsButtons.style.maxHeight) {
 
-                    arrowDown.classList.remove("hideArrow");
-                    arrowRight.classList.add("hideArrow");
-                }
 
                 optionsButtons.style.maxHeight = null;
+                arrowDown.classList.add("hideArrow");
+                arrowRight.classList.remove("hideArrow");
 
 
 

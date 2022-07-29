@@ -1,12 +1,11 @@
 {% extends 'main_base.html' %}
 {% block content %}
-<div>
-    <a href="{% url 'javna_uprava_vss_brcko:quiz' total_questions %}">351</a>
-    <a href="{% url 'javna_uprava_vss_brcko:quiz' 25 %}">25</a>
+<div class="index-div">
+    <h1 class="index-h1">Javna uprava Brčko VSS distrikt Bosne i Hercegovine</h1>
 
     <div class="quiz-options-container">
         <div class="quiz-sve">
-            <h1>Kviz 351</h1>
+            <h1>Kviz 351 (REDOM)</h1>
             <p>Pokreni kviz sa svim pitanjima redoslijedom kako je u skripti.</p>
         </div>
         <div class="quiz-sve-n">
@@ -26,13 +25,13 @@
     const quiz25 = document.querySelector(".quiz-25");
 
     quizSve.addEventListener("click", () => {
-        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' total_questions %}"
+        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' total_questions 'red' %}"
     })
     quizSveN.addEventListener("click", () => {
-        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' total_questions %}"
+        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' total_questions 'rand' %}"
     })
     quiz25.addEventListener("click", () => {
-        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' 25 %}"
+        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' 25 'rand' %}"
     })
 
 </script>

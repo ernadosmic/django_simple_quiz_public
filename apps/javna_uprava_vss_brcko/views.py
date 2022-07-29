@@ -1,4 +1,5 @@
 from multiprocessing import context
+from sre_constants import SUCCESS
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Question
@@ -10,11 +11,17 @@ def index(request):
     return render(request, 'javna_uprava_vss_brcko/index.html', {'total_questions': total_questions})
 
 
-def quiz(request, question_num_in_quiz):
+def quiz(request, question_num_in_quiz, rand):
+    print(rand)
+    print(type(rand))
     question_list = []
     total_questions = Question.objects.all().count()
-    random_array = random.sample(
-        range(1, total_questions + 1), question_num_in_quiz)
+
+    if rand == "rand":
+        random_array = random.sample(
+            range(1, total_questions + 1), question_num_in_quiz)
+    else:
+        random_array = range(1, total_questions)
 
     for i in random_array:
         q = Question.objects.get(question_num=i)
