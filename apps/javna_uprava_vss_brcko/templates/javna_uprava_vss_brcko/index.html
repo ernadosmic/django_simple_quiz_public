@@ -3,7 +3,39 @@
 <div>
     <a href="{% url 'javna_uprava_vss_brcko:quiz' total_questions %}">351</a>
     <a href="{% url 'javna_uprava_vss_brcko:quiz' 25 %}">25</a>
+
+    <div class="quiz-options-container">
+        <div class="quiz-sve">
+            <h1>Kviz 351</h1>
+            <p>Pokreni kviz sa svim pitanjima redoslijedom kako je u skripti.</p>
+        </div>
+        <div class="quiz-sve-n">
+            <h1>Kviz 351 (nasumično)</h1>
+            <p>Pokreni kviz sa svim pitanjima nasumičnim redoslijedom.</p>
+        </div>
+        <div class="quiz-25">
+            <h1>Kviz 25</h1>
+            <p>Pokreni kviz sa 25 nasumično odabranih pitanja.</p>
+        </div>
+    </div>
 </div>
+
+<script>
+    const quizSve = document.querySelector(".quiz-sve");
+    const quizSveN = document.querySelector(".quiz-sve-n");
+    const quiz25 = document.querySelector(".quiz-25");
+
+    quizSve.addEventListener("click", () => {
+        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' total_questions %}"
+    })
+    quizSveN.addEventListener("click", () => {
+        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' total_questions %}"
+    })
+    quiz25.addEventListener("click", () => {
+        document.location.href = "{% url 'javna_uprava_vss_brcko:quiz' 25 %}"
+    })
+
+</script>
 
 
 {% endblock content %}

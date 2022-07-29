@@ -4,8 +4,9 @@
 
 <head>
     {% block head %}{% endblock head %}
-    <script src="https://kit.fontawesome.com/1e0e201c56.js" crossorigin="anonymous"></script>
+    {% comment %} <script src="https://kit.fontawesome.com/1e0e201c56.js" crossorigin="anonymous"></script> {% endcomment %}
     <link rel="stylesheet" type="text/css" href="{% static "css/main_style.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/fontawesome 6.10/css/all.min.css" %}"/>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +21,7 @@
         <nav class="navbar">
             <ul class="nav-menu">
                 <li class="nav-logo"><a href="{% url "home:index" %}">uletjeti.io</a></li>
-                <li class="nav-toggle"><i class="fa-solid fa-bars"></i></li>
+                <li class="nav-toggle"><i class="far fa-bars"></i></li>
                 <li class="nav-links"><a href="{% url 'javna_uprava_vss_brcko:index' %}">BDBiH</a></li>
                 <li class="nav-links"><a href="#">FBiH</a></li>
                 <li class="nav-links"><a href="#">RSBiH</a></li>

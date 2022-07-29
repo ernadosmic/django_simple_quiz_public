@@ -7,8 +7,8 @@
         <div class="select-menu">
             <button id="select-button" class="select-button">
                 Odaberite upravnu jedinicu
-                <i id="select-arrow-down" class="hideArrow thin fa-solid fa-angle-down select-button"></i>
-                <i id="select-arrow-right" class="thin fa-solid fa-angle-right select-button"></i>
+                <i id="select-arrow-down" class="thin fa-light fa-angle-down select-button hideArrow"></i>
+                <i id="select-arrow-right" class="thin fa-light fa-angle-right select-button"></i>
             </button>
 
         </div>
@@ -50,6 +50,7 @@
 
 
         selectButton.addEventListener("click", function () {
+
             arrowDown = document.getElementById("select-arrow-down");
             arrowRight = document.getElementById("select-arrow-right");
 
@@ -70,11 +71,23 @@
         });
 
 
-
-
         window.addEventListener("click", function (event) {
+            if (optionsButtons.style.maxHeight) {
+
+                arrowDown.classList.remove("hideArrow");
+                arrowRight.classList.add("hideArrow");
+            }
             if (event.target.id !== "select-button") {
+                if (optionsButtons.style.maxHeight) {
+
+                    arrowDown.classList.remove("hideArrow");
+                    arrowRight.classList.add("hideArrow");
+                }
+
                 optionsButtons.style.maxHeight = null;
+
+
+
             }
         })
 
@@ -86,8 +99,8 @@
                 }
             }
             document.getElementById(event.target.value).classList.add("show-card")
-            selectButton.children[0].innerHTML = `${event.target.innerHTML}<i id="select-arrow-down" class="hideArrow thin fa-solid fa-angle-down select-button"></i>
-                <i id="select-arrow-right" class="thin fa-solid fa-angle-right select-button"></i>`;
+            selectButton.children[0].innerHTML = `${event.target.innerHTML}<i id="select-arrow-down" class="hideArrow thin fa-light fa-angle-down select-button"></i>
+                <i id="select-arrow-right" class="thin fa-light fa-angle-right select-button"></i>`;
 
         }
 
