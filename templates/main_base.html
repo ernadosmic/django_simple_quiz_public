@@ -33,12 +33,19 @@
         <div id="bg">
         </div>
     </div>
-
     <!-- MAIN -->
     <main>
-                
+        <div id="loading">
+            
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <p>Sačekaj sekundu...</p>
+        </div>
+        
+        
+        <div id="main-content">
 
-    {% block content %}{% endblock content %}
+            {% block content %}{% endblock content %}
+        </div>
     </main>
     
 
@@ -82,6 +89,10 @@
 
     <!-- MAIN SCRIPT -->
     <script>
+        const loadingImage = document.getElementById("loading");
+        const mainContent = document.getElementById("main-content");
+        const mainTag = document.getElementsByTagName("main")[0];
+        
         // MENU TOGGLE
         const toggleButton = document.getElementsByClassName("nav-toggle")[0];
         const navLinks = document.getElementsByClassName("nav-links");
@@ -124,6 +135,20 @@
                 //navButtons[i].classList.toggle("open-menu");
             };
         }
+
+
+        window.addEventListener("beforeunload", () => {
+            console.log("ides")
+            loadingImage.style.display = "flex"
+            mainContent.style.display = "none"
+            mainTag.style.justifyContent = "center"
+        })
+        window.addEventListener("load", () => {
+            console.log("dosao")
+            loadingImage.style.display = "none"
+            mainContent.style.display = "unset"
+            mainTag.style.justifyContent = "flex=start"
+        })
 
 
     </script>
