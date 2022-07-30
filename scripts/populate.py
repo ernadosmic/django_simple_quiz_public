@@ -7,7 +7,7 @@ def run():
     choices = Choice.objects.all()
     choices.delete()
     questions.delete()
-    with open('javna_uprava_vss_brcko/questions.csv', encoding='utf-8') as csvfile:
+    with open('apps/javna_uprava_vss_brcko/questions.csv', encoding='utf-8') as csvfile:
         rows = csv.reader(csvfile, delimiter=';')
         next(rows)
         for i, row in enumerate(rows, start=1):

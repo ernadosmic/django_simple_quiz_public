@@ -204,6 +204,13 @@ li.nav-buttons {
   }
 }
 
+.uskoro .card-title::before {
+  content: "(uskoro)";
+  color: var(--incorrect);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
 .bigShadow {
   box-shadow: 0 0 100px 100px rgba(var(--dark-rgb), 0.8);
 }
@@ -1304,7 +1311,7 @@ ol > .wrong_list_item:before {
 @media (min-width: 1024px) {
   .card-index-title h1 {
     padding-left: 15px;
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .card-index-subtitle h2 {
