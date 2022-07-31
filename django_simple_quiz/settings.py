@@ -27,7 +27,7 @@ SECRET_KEY = '#!nawg2_#53y9ai5_#0%_u&!u=ch4*ti%s*mbb6#*zgoy3-ji='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['uletio.herokuapp.com', 'ernadosmic.pythonanywhere.com']
 
 
 # Application definition
