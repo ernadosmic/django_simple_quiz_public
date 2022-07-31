@@ -150,6 +150,13 @@
             mainTag.style.justifyContent = "flex=start"
         })
 
+        document.main.className = 'fade';
+
+        document.addEventListener("DOMContentLoaded", () => {
+            window.setTimeout(function() {
+              document.body.className = '';
+            }, 230);
+          });
 
     </script>
 </body>
