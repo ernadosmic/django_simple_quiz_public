@@ -44,11 +44,6 @@ image==1.5.33
 isort==5.10.1
 itsdangerous==2.1.2
 Jinja2==3.1.1
-Kivy==2.1.0
-kivy-deps.angle==0.3.2
-kivy-deps.glew==0.3.1
-kivy-deps.sdl2==0.4.5
-Kivy-Garden==0.1.5
 lazy-object-proxy==1.7.1
 lief==0.12.1
 lxml==4.8.0
