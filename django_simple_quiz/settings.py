@@ -28,7 +28,7 @@ SECRET_KEY = '#!nawg2_#53y9ai5_#0%_u&!u=ch4*ti%s*mbb6#*zgoy3-ji='
 DEBUG = True
 
 ALLOWED_HOSTS = ['uletio.herokuapp.com', 'ernadosmic.pythonanywhere.com',
-                 "www.uletjeti.com", "uletjeti.com"]
+                 "www.uletjeti.com", "uletjeti.com", 'localhost']
 
 
 # Application definition

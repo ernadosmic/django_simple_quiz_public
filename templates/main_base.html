@@ -5,16 +5,18 @@
 <head>
     {% block head %}{% endblock head %}
     <link rel="stylesheet" type="text/css" href="{% static "css/main_style.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static "vendor/fontawesome 6.10/css/all.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/fontawesome 6.10/css/all.min.css" %}" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kvizovi za polaganje testova prilikom zapošljavanja u državnim službama Bosne i Hercegovine. Pitanja s ponuđenim odgovorima za vježbanje.">
-    <meta name="keywords" content="javna služba, javna uprava, test općeg znanja, testovi opšteg znanja, zakoni, ustav BiH">
-
+    <meta name="description"
+        content="Kvizovi za polaganje testova prilikom zapošljavanja u državnim službama Bosne i Hercegovine. Pitanja s ponuđenim odgovorima za vježbanje.">
+    <meta name="keywords"
+        content="javna služba, javna uprava, test općeg znanja, testovi opšteg znanja, zakoni, ustav BiH">
+    <meta property="og:image" content=" {% static'img/og.png'%} " >
     <title>uletjeti - kvizovi države</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3638728453638870"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
 
 
@@ -24,7 +26,7 @@
     <header id="header">
         <nav class="navbar">
             <ul class="nav-menu">
-                <li class="nav-logo"><a href="{% url 'home:index' %}">uletjeti</a></li>
+                <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.16 32.19"><defs><style>.cls-1{font-size:30px;font-family:Quicksand-SemiBold, Quicksand;font-weight:600;letter-spacing:-0.06em;}.cls-1,.cls-7{fill:#f2f2f3;}.cls-2{letter-spacing:-0.07em;}.cls-3{letter-spacing:-0.03em;}.cls-4{letter-spacing:-0.05em;}.cls-5{fill:#dad9d9;}.cls-6{fill:#e6e6e6;}</style></defs><title>Asset 2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(40.56 25.86)">u<tspan class="cls-2" x="15.75" y="0">l</tspan><tspan class="cls-3" x="21.48" y="0">e</tspan><tspan class="cls-4" x="37.77" y="0">tj</tspan><tspan class="cls-3" x="54.6" y="0">eti</tspan></text><rect class="cls-5" x="1.59" y="23.26" width="33.87" height="5"/><rect class="cls-6" x="1.59" y="17.26" width="33.87" height="5"/><rect class="cls-7" x="1" y="8.23" width="33.87" height="5" transform="translate(-1.29 2.54) rotate(-7.82)"/><rect class="cls-7" x="0.18" y="2.28" width="33.87" height="5" transform="translate(-0.49 2.37) rotate(-7.82)"/></g></g></svg>
                 <li class="nav-toggle"><i class="far fa-bars"></i></li>
                 <li class="nav-links"><a href="{% url 'home:brcko' %}">Brčko distrikt BiH</a></li>
                 <li class="nav-links"><a href="{% url 'home:federacija' %}">Federacija BiH</a></li>
@@ -41,18 +43,27 @@
     <!-- MAIN -->
     <main>
         <div id="loading">
-            
-            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        <p>Sačekaj sekundu...</p>
+
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p>Sačekaj sekundu...</p>
         </div>
-        
-        
+
+
         <div id="main-content">
 
             {% block content %}{% endblock content %}
         </div>
     </main>
-    
+
 
     <!--  MAIN FOOTER -->
     <footer id="footer">
@@ -63,7 +74,12 @@
                     <div class="statement">
 
                         <p>
-                            uletjeti ima za cilj da obezbijedi korisnicima pristup platformi pomoću koje se mogu pripremiti za intervjue za zapošljavanje u javnim i državnim ustanovama na prostoru Bosne i Hercegovine. S obzirom na neefikasnost ovdašnjih administrativnih (iako pretrpanih) struktura, te na nasumičnost, nepotističke pretenzije i sijaset drugih faktora koji utječu na zapošljavanje kadrova u ovoj sferi, uletjeti želi da omogući jednostavnu pripremu za proces pismenih ispita u ovoj sferi. Sretno!
+                            uletjeti ima za cilj da obezbijedi korisnicima pristup platformi pomoću koje se mogu
+                            pripremiti za intervjue za zapošljavanje u javnim i državnim ustanovama na prostoru Bosne i
+                            Hercegovine. S obzirom na neefikasnost ovdašnjih administrativnih (iako pretrpanih)
+                            struktura, te na nasumičnost, nepotističke pretenzije i sijaset drugih faktora koji utječu
+                            na zapošljavanje kadrova u ovoj sferi, uletjeti želi da omogući jednostavnu pripremu za
+                            proces pismenih ispita u ovoj sferi. Sretno!
                         </p>
                     </div>
                 </div>
@@ -97,7 +113,7 @@
         const loadingImage = document.getElementById("loading");
         const mainContent = document.getElementById("main-content");
         const mainTag = document.getElementsByTagName("main")[0];
-        
+
         // MENU TOGGLE
         const toggleButton = document.getElementsByClassName("nav-toggle")[0];
         const navLinks = document.getElementsByClassName("nav-links");
@@ -112,7 +128,7 @@
                 i.classList.toggle("open-menu");
                 //navButtons[i].classList.toggle("open-menu");
             };
-            
+
         });
 
         // CLICK AWAY MENU
@@ -158,11 +174,10 @@
         document.main.className = 'fade';
 
         document.addEventListener("DOMContentLoaded", () => {
-            window.setTimeout(function() {
-              document.body.className = '';
+            window.setTimeout(function () {
+                document.body.className = '';
             }, 230);
-          });
-
+        });
     </script>
 </body>
 
