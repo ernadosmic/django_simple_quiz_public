@@ -1651,9 +1651,9 @@ ol > .wrong_list_item:before {
 #plain-div h2::after {
   position: absolute;
   content: "";
-  bottom: -10px;
+  bottom: -5px;
   left: 0;
-  background-color: red;
+  background-color: var(--incorrect);
   width: 50%;
   height: 2px;
 }
