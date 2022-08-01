@@ -1219,7 +1219,7 @@ ol > .wrong_list_item:before {
     width: 100%;
     margin: 5px 15px;
   }
-  .quiz-sve h2 {
+  .quiz-options-container h2 {
     font-size: 1.2rem;
   }
 }
@@ -1640,12 +1640,15 @@ ol > .wrong_list_item:before {
   position: relative;
 }
 
-#plain-div h1 h2 p {
+#plain-div h1,
+#plain-div h2,
+#plain-div p {
   margin-bottom: 25px;
   position: relative;
 }
 
-#plain-div h1::after h2::after {
+#plain-div h1::after,
+#plain-div h2::after {
   position: absolute;
   content: "";
   bottom: -10px;
