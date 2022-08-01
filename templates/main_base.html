@@ -4,6 +4,15 @@
 
 <head>
     {% block head %}{% endblock head %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2T1TW4X630"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2T1TW4X630');
+</script>
     <link rel="stylesheet" type="text/css" href="{% static "css/main_style.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "vendor/fontawesome 6.10/css/all.min.css" %}" />
     <meta charset="UTF-8" />
