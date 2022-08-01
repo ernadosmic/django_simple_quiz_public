@@ -85,10 +85,10 @@
                 <div class="footer-col links">
                     <h4>poveznice</h4>
                     <ul>
-                        <li><a href="#">O nama</a></li>
-                        <li><a href="#">Uvjeti korištenja</a></li>
-                        <li><a href="#">Politika privatnosti</a></li>
-                        <li><a href="#">Pomoć</a></li>
+                        <li><a href=" {% url 'home:o_nama' %} ">O nama</a></li>
+                        <li><a href="{% url 'home:uvjeti_koristenja' %}">Uvjeti korištenja</a></li>
+                        <li><a href="{% url 'home:politika_privatnosti' %}">Politika privatnosti</a></li>
+                        <li><a href="{% url 'home:pomoc' %}">Pomoć</a></li>
                     </ul>
                 </div>
                 <div class="footer-col social">

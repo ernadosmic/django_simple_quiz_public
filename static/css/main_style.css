@@ -1630,3 +1630,36 @@ ol > .wrong_list_item:before {
     transform: rotate(360deg);
   }
 }
+
+#plain-div {
+  width: 60%;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto 5vh auto;
+  position: relative;
+}
+
+#plain-div h1,
+h2,
+p {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+#plain-div h1::after,
+h2::after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 0;
+  background-color: red;
+  width: 50%;
+  height: 2px;
+}
+
+@media (max-width: 425px) {
+  #plain-div {
+    width: 90%;
+  }
+}

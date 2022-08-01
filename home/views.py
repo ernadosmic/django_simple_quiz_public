@@ -15,3 +15,19 @@ def federacija(request):
 
 def rs(request):
     return render(request, 'home/rs_index.html')
+
+
+def o_nama(request):
+    return render(request, 'home/o-nama.html')
+
+
+def uvjeti_koristenja(request):
+    return render(request, 'home/uvjeti-koristenja.html')
+
+
+def politika_privatnosti(request):
+    return render(request, 'home/politika-privatnosti.html')
+
+
+def pomoc(request):
+    return render(request, 'home/pomoc.html')
