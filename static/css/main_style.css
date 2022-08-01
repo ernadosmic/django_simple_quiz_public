@@ -1640,15 +1640,12 @@ ol > .wrong_list_item:before {
   position: relative;
 }
 
-#plain-div h1,
-h2,
-p {
+#plain-div h1 h2 p {
   margin-bottom: 25px;
   position: relative;
 }
 
-#plain-div h1::after,
-h2::after {
+#plain-div h1::after h2::after {
   position: absolute;
   content: "";
   bottom: -10px;
