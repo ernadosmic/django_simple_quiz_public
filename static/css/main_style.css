@@ -68,7 +68,7 @@ html:focus-within {
 #bg {
   height: 100%;
   width: 100%;
-  background-image: url(../img/bg.jpg);
+  background-image: url(../img/bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
