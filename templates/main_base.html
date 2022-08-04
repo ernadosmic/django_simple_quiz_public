@@ -167,19 +167,16 @@
 
 
         window.addEventListener("beforeunload", () => {
-            console.log("ides")
             loadingImage.style.display = "flex"
             mainContent.style.display = "none"
             mainTag.style.justifyContent = "center"
         })
         window.addEventListener("load", () => {
-            console.log("dosao")
             loadingImage.style.display = "none"
             mainContent.style.display = "unset"
             mainTag.style.justifyContent = "flex=start"
         })
         window.addEventListener("pageshow", () => {
-            console.log("vratio si se")
             loadingImage.style.display = "none"
             mainContent.style.display = "unset"
             mainTag.style.justifyContent = "flex=start"
