@@ -934,6 +934,15 @@ ol > .wrong_list_item:before {
   justify-content: center;
   margin-top: 25px;
 }
+.quiz-cards-container p {
+  margin-top: 25px;
+}
+
+.index-h1 ~ p {
+  color: var(--light);
+  padding: 0.5rem 2rem;
+}
+
 .quiz-cards {
   opacity: 0;
   display: none;
@@ -959,11 +968,11 @@ ol > .wrong_list_item:before {
 
 .card-index-subtitle {
   margin-bottom: 20px;
-  position: relative;
   width: 80%;
   color: var(--light);
 }
 .card-index-subtitle h3 {
+  position: relative;
   font-size: 2.2rem;
 }
 
