@@ -141,9 +141,7 @@ function nextQuestionClick(value, id) {
         );
 
         for (const i in currentQuestionChoices) {
-            "Object.keys(currentQuestionChoices[i]): ",
-                Object.keys(currentQuestionChoices[i])
-            );
+
 
             const wrongChoices = document.createElement("li");
             wrongChoices.setAttribute("class", `wrong_list_item`);
