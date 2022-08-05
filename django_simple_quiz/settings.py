@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'javna_uprava_vss_brcko.apps.JavnaUpravaVssBrckoConfig',
     'namjestenik_brcko.apps.NamjestenikBrckoConfig',
+    'cistacice_brcko.apps.CistaciceBrckoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

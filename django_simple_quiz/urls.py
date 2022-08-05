@@ -7,6 +7,8 @@ urlpatterns = [
          include('javna_uprava_vss_brcko.urls')),
     path('brcko/namjestenik_brcko/',
          include('namjestenik_brcko.urls')),
+    path('brcko/cistacice_brcko/',
+         include('cistacice_brcko.urls')),
     path('', include('home.urls')),
     path('jugo5656/', admin.site.urls),
     path(

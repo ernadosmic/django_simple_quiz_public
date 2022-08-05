@@ -1,0 +1,31 @@
+﻿Column1;Column2;Column3;Column4;Column5;Column6;Column7;Column8;rezult1t
+1;Ko ima pravo u uvid sredstava i opreme za ličnu sigurnost na radu;Upravni inspektor;Inspektor rada;;;;;2
+2;Da li zaposleno lice ima pravo odbiti izvršenje radnih zadataka;Da, kada isti nisu u skladu sa sistematizacijom radnog mjesta;Ne.;Samo u onim slučajevima gdje je to zakonom određeno;;;;3
+3;U kojim slučajevima zaposlenik ima pravo odbiti nalog rukovodioca organa javne uprave;Ukoliko mu prijeti neposredna opasnost po život i zdravlje, zbog toga što nisu provedene propisane mjere za sigurnost i zaštitu zdravlja na poslovima koje obavlja;Nema pravo odbiti nalog šefa;Ukoliko poslovi isu obuhvaćeni Organizacionim planom nadležnog odjeljenja;;;;1
+4;Čistačice su obavezne nositi uniformu boje;boje trule višnje;plave boje;boje po izboru;;;;1
+5;Uniforma čistačice sastoji se od;Dugih hlača, tunike, prsluka i pamučnih majici;Dugih hlača, tunike, prsluka, pamučnih majici i papuča;Dugih hlača, tunike i pamučnih majica;;;;2
+6;Uniforme se nabavljaju;Jednom godišnje;Jednom u dvije godine;Po potrebi;;;;2
+7;Da li je čistačica dužna da nosi zaštitnu odjeću;Da, obavezno;Ne;Samo ukoliko šef naredi;;;;1
+8;Da li je čistačica obavezna prenositi službene akte;Ne;Da;;;;;1
+9;Obaveza čistačice je da svakodnevno briše prašinu sa:;računara;telefonskih aparata;namještaja;;;;3
+10;Kada se obavlja pranje prozora i zavjesa;periodično;svakodnevno;Samo ukoliko šef naredi;;;;1
+11;Kada se vrši usisavanje prostorija;kada šef procijeni da je potrebno;svakodnevno;periodično;;;;2
+12;Kada se vrši brisanje prašine;svakodnevno;perodično;kada šef procijeni da je potrebno;;;;1
+13;Ko vrši kontrolu higijene prostorije;neposredni šef;inspektor rada;sanitarni inspektor;;;;3
+14;Po čijem nalogu čistačica obavlja i druge poslove;svakog zaposlenika organa uprave;neposrednog rukovodioca;šefa pododjeljenja i šefa odjeljenja;;;;3
+15;Da li je čistačica dužna svakodnevno da dezinfikuje namještaj;ne;obavezna je svakodnevna dezinfekcija namještaja;;;;;1
+16;Da li je u opisu poslova radnog mjesta čistačice uključivanje klima uređaja;da, obavezno;ne;samo ukoliko naredi radnik iz obezbjeđenja;;;;2
+17;Da li su papuče obavezan dio radne uniforme;ne;samo ukoliko posebnim nalogom to zahtjeva sanitarni inspektor;da;;;;3
+18;Da li čistačica dužna svakodnevno da briše namještaj ;samo ukoliko primijeti da je prljav;da;ne;;;;2
+19;Kada se vrši iznošenje smeća iz prostorija organa uprave;kada neposredni šef naredi;kada se nakupi dovoljno smeća;svakodnevno;;;;3
+20;Kada se obavlja pranje tepiha i tepih staza;periodično;svakodnevno;samo ukoliko šef naredi;;;;1
+21;Da li je čistačica dužna da čisti nepristupačna mjesta čime bi ugrozila svoju sigurnost;da;ne;Samo ukoliko šef naredi;;;;2
+22;Zaštita od zaraznih bolesti obavezno se sprovodi;opštim i posebnim mjerama;osnovnim mjerama;posebnim mjerama;;;;1
+23;Dezinfekciju, dezinsekciju i deratizaciju, kao opštu i posebnu mjeru za sprječavanje i suzbijanje zaraznih bolesti vrše;Zdravstvene ustanove koje imaju odgovarajuaće stručne radnike, opremu i sredstva i ispunjavaju druge uslove propisane zakonom;Čistačica po nalogu neposredno pretpostavljenog;sanitarni inspektor;;;;1
+24;Dezinfekcija, dezinsekcija i deratizacija može se vršiti;sredstvima koja su na raspolaganju;samo sredstvima koja imaju toksikološku ocjenu i ocjenu njihove efikasnosti za navedene svrhe;sredstvima koja odredi sanitarni inspektor;;;;2
+25;U opšte mjere za sprječavanje i suzbijanje zaraznih bolesti spadaju;Održavanje sanitarno-tehničkih i higijenskih uslova u javnim zgradama, sredstvima javnog saobraćaja i na javnim mjestima;Rano otkrivanje izvora zaraze i puteva za prenošenje zaraze;Karantin i zdravstveni nadzor;;;;1
+26;U opšte mjere za sprječavanje i suzbijanje zaraznih bolesti spadaju;Zdravstveno obrazovanje;Rano otkrivanje izvora zaraze i puteva za prenošenje zaraze;Obezbjeđivanje zdravstvene ispravnosti životnih namirnica i predmeta opšte upotrebe, kao i sanitarno-tehničkih i higijenskih uslova za njihovu proizvodnju i pomet;;;;3
+27;U opšte mjere za sprječavanje i suzbijanje zaraznih bolesti spadaju;Zdravstveno obrazovanje;zdravstveni nadzor nad zaposlenima i drugim licima i nad kliconošama;Obezbjeđivanje higijenski ispravne vode za piće, kao i sanitarna zaštita izvorišta i objekata za javno snabdijevanje vodom za piće;;;;3
+28;U posebne mjere za sprječavanje i suzbijanje zaraznih bolesti spadaju;Uklanjanje otpadnih voda i drugih otpadnih materijala na način i pod uslovima kojima se obezbjeđuje zaštita od zagađivanja voda i zemljišta, kao i zaštita od razmnožavanja insekata i glodara;Karantin i zdravstveni nadzor;Obezbjeđivanje higijenski ispravne vode za piće, kao i sanitarna zaštita izvorišta i objekata za javno snabdijevanje vodom za piće;;;;2
+29;U posebne mjere za sprječavanje i suzbijanje zaraznih bolesti spadaju;Obezbjeđivanje zdravstvene ispravnosti životnih namirnica i predmeta opšte upotrebe, kao i sanitarno-tehničkih i higijenskih uslova za njihovu proizvodnju i pomet;Uklanjanje otpadnih voda i drugih otpadnih materijala na način i pod uslovima kojima se obezbjeđuje zaštita od zagađivanja voda i zemljišta, kao i zaštita od razmnožavanja insekata i glodara;Zdravstveno obrazovanje;;;;3
+30;U posebne mjere za sprječavanje i suzbijanje zaraznih bolesti spadaju;Rano otkrivanje izvora zaraze i puteva za prenošenje zaraze;Uklanjanje otpadnih voda i drugih otpadnih materijala na način i pod uslovima kojima se obezbjeđuje zaštita od zagađivanja voda i zemljišta, kao i zaštita od razmnožavanja insekata i glodara;Obezbjeđivanje higijenski ispravne vode za piće, kao i sanitarna zaštita izvorišta i objekata za javno snabdijevanje vodom za piće;;;;1

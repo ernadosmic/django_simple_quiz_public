@@ -1,0 +1,46 @@
+{% extends 'main_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="content">
+    <h1 class="index-h1 quiz-h1">Javna uprava VSS/VŠS Brčko distrikt Bosne i Hercegovine</h1>
+    <div id="quiz_content">
+        <div id="question_box"></div>
+        <div id="results_box" class="res_hidden">
+            <div id="results_box_header">
+                <div id="results_box_heading">Netačni odgovori:</div>
+                <hr>
+            </div>
+            <div id="results_box_content"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    const jsQuestionList = new Map();
+    function createQuestionMap() {
+        {% for x in question_list %}
+            jsQuestionList.set({{ x.question_num|escapejs }}, {question: "{{ x.question_text|escapejs }}", choices: {}});
+            {% for y in x.choice_set.all%}
+                {% if y.correct_choice %}
+                    jsQuestionList.get({{ x.question_num|escapejs }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text|escapejs }}": true}
+                {% else %}
+                    jsQuestionList.get({{ x.question_num|escapejs }}).choices["{{ forloop.counter }}"] = {"{{ y.choice_text|escapejs }}": false}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        createQuestionMap();
+        nextQ.next();
+    },
+    false);
+
+</script>
+<script defer type="text/javascript" src="{% static "cistacice_brcko/js/quiz.js" %}"></script>
+
+
+
+{% endblock content %}
