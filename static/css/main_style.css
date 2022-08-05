@@ -939,6 +939,20 @@ ol > .wrong_list_item:before {
   padding-left: 15px;
 }
 
+@media (max-width: 425px) {
+  .quiz-cards-container p {
+    font-size: 0.85rem;
+  }
+  .card-description p {
+    margin-top: 0;
+    font-size: 0.7rem;
+  }
+}
+
+.card-description p {
+  margin-top: 0;
+}
+
 .index-h1 ~ p {
   color: var(--light);
   padding: 0.5rem 2rem;

@@ -1,5 +1,5 @@
 import csv
-from namjestenik_brcko.models import Question, Choice
+from apps.javna_uprava_vss_brcko.models import Question, Choice
 
 
 def run():
