@@ -936,6 +936,7 @@ ol > .wrong_list_item:before {
 }
 .quiz-cards-container p {
   margin-top: 25px;
+  padding-left: 15px;
 }
 
 .index-h1 ~ p {
