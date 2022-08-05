@@ -21,7 +21,7 @@ def quiz(request, question_num_in_quiz, rand):
         random_array = random.sample(
             range(1, total_questions + 1), question_num_in_quiz)
     else:
-        random_array = range(1, total_questions)
+        random_array = range(1, total_questions + 1)
 
     for i in random_array:
         q = Question.objects.get(question_num=i)
