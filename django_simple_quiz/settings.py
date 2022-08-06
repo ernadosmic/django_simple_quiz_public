@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'javna_uprava_vss_brcko.apps.JavnaUpravaVssBrckoConfig',
     'namjestenik_brcko.apps.NamjestenikBrckoConfig',
     'cistacice_brcko.apps.CistaciceBrckoConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,8 +53,8 @@ INSTALLED_APPS = [
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # One apps folder
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,13 +138,15 @@ USE_TZ = True
 
 
 STATIC_URL = "/static/"
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
-# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Default primary key field type
