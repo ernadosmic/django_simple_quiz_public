@@ -73,25 +73,6 @@
             <p>Sačekaj sekundu...</p>
         </div>
 
-
-        < script >
-        let elOne = document.getElementsByClassName("hidden_part_1")[0];
-    let elTwo = document.getElementsByClassName("hidden_part_2")[0];
-    
-    window.onclick = e => {
-        if (e.target.id === "option_1") {
-            elOne.hidden = "";
-            elTwo.hidden = "hidden";
-        }
-        else if (e.target.id === "option_2") {
-            elOne.hidden = "hidden";
-            elTwo.hidden = "";
-    
-        }
-    }
-            
-          </script >
-
         <div id="main-content">
 
             {% block content %}{% endblock content %}
