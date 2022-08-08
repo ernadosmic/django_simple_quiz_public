@@ -27,8 +27,7 @@ SECRET_KEY = 'secret'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['uletio.herokuapp.com', 'ernadosmic.pythonanywhere.com',
-                 "www.uletjeti.com", "uletjeti.com", 'localhost']
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
