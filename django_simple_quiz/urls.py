@@ -10,7 +10,7 @@ urlpatterns = [
     path('brcko/cistacice_brcko/',
          include('cistacice_brcko.urls')),
     path('', include('home.urls')),
-    path('jugo5656/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path(
         "robots.txt",
         TemplateView.as_view(template_name="robots.txt",
