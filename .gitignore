@@ -4,3 +4,4 @@ __pycache__/
 .vscode/
 staticfiles/
 scripts/
+.sqlite3
